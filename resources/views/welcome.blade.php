@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -39,6 +40,7 @@
     {{-- End Navigation Bar --}}
     {{-- Body --}}
     <div class="container mt-3">
+        {{-- Carousel --}}
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="0" class="active"
@@ -70,7 +72,79 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-    </div>
+        {{-- End Carousel --}}
+        {{-- Layanan Card --}}
+        <div class="container mt-4">
+            <div class="container" id="menu_layanan">
+                <header class="section-header">
+                    <h2 class="section-title">
+                        Pilih <span>Pelayanan</span>
+                    </h2>
+                    <div class="header-underline" role="presentation"></div>
+                    <div class="divider" role="presentation"></div>
+                </header>
+            </div>
+            <div class="row g-4">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="service-item">
+                        <div class="service-icon-wrapper">
+                            <img src="{{ asset('assets/bpjs_icon.png') }}" class="service-icon"
+                                alt="BPJS Check Service" width="58" height="58">
+                        </div>
+                        <h3 class="service-title">Cek BPJS</h3>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="service-item">
+                        <div class="service-icon-wrapper">
+                            <img src="{{ asset('assets/career_icon.png') }}" class="service-icon-career"
+                                alt="Career Service" width="58" height="58">
+                        </div>
+                        <h3 class="service-title">Career</h3>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="service-item">
+                        <div class="service-icon-wrapper">
+                            <img src="{{ asset('assets/info_icon.png') }}"
+                                class="service-icon" alt="Information Service" width="58" height="58">
+                        </div>
+                        <h3 class="service-title">Information</h3>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="service-item">
+                        <div class="service-icon-wrapper">
+                            <img src="{{ asset('assets/counseling_icon.png') }}"
+                                class="service-icon" alt="Counseling Service" width="58" height="58">
+                        </div>
+                        <h3 class="service-title">Counseling</h3>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="service-item">
+                        <div class="service-icon-wrapper">
+                            <img src="{{ asset('assets/cuti_icon.png') }}"
+                                class="service-icon" alt="Online Leave Service" width="58" height="58">
+                        </div>
+                        <h3 class="service-title">Cuti Online</h3>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="service-item">
+                        <div class="service-icon-wrapper">
+                            <img src="{{ asset('assets/resign_icon.png') }}"
+                                class="service-icon" alt="Online Resignation Service" width="58" height="58">
+                        </div>
+                        <h3 class="service-title">Resign Online</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- End Body --}}
+        {{-- Footer --}}
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
