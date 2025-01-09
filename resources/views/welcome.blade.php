@@ -39,7 +39,7 @@
     </nav>
     {{-- End Navigation Bar --}}
     {{-- Body --}}
-    <div class="container mt-3">
+    <div class="container mt-3 pb-3">
         {{-- Carousel --}}
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -129,6 +129,16 @@
                                 alt="Online Leave Service" width="58" height="58">
                         </div>
                         <h3 class="service-title">Cuti Online</h3>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="service-item">
+                        <div class="service-icon-wrapper">
+                            <img src="{{ asset('assets/resign_icon.png') }}" class="service-icon"
+                                alt="Online Resignation Service" width="58" height="58">
+                        </div>
+                        <h3 class="service-title">Resign Online</h3>
                     </div>
                 </div>
 
@@ -248,10 +258,97 @@
                             </div>
                         </article>
                     </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <article class="job-card h-98">
+                            <div class="job-content">
+                                <div class="job-header">
+                                    <div class="logo-wrapper">
+                                        <img src="https://cdn.builder.io/api/v1/image/assets/ac6b6ea4d2d54dc49c08994396456689/360c88875bac6f965fd2992d688bd3e295157edca593704242fd9b833ec5cc45?apiKey=ac6b6ea4d2d54dc49c08994396456689&"
+                                            alt="Company logo" class="company-logo">
+                                    </div>
+                                    <h2 class="job-title">Admin<br>Social Media</h2>
+                                    <div class="divider-job" aria-hidden="true"></div>
+                                </div>
+                                <div class="job-details">
+                                    <div class="d-flex flex-wrap">
+                                        <span class="tag">Fulltime</span>
+                                        <span class="tag">Min. S1</span>
+                                        <span class="tag">Ms. Excel</span>
+                                        <span class="tag">Freshgraduate</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </section>
         </div>
         {{-- End Info Loker --}}
+        {{-- News Section --}}
+        <section class="news-container mt-4 pb-4">
+            <div class="container-fluid p-0">
+                <div class="news-header">
+                    <div class="news-border">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <header>
+                                    <div class="news-category" role="text">News</div>
+                                    <h1 class="news-main-title">Laman</h1>
+                                    <h2 class="news-subtitle">Berita HWI</h2>
+                                </header>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="search-content">
+                                    <button class="search-link btn btn-link p-0 border-0" aria-label="Search news">
+                                        <span class="search-text">telusuri</span>
+                                        <img src="https://cdn.builder.io/api/v1/image/assets/ac6b6ea4d2d54dc49c08994396456689/a7d7f18946fff3fc68ca60b3dc283f9b7756dd8a25da815edb415246507a95be?apiKey=ac6b6ea4d2d54dc49c08994396456689&"
+                                            width="20" height="20" alt="" aria-hidden="true"
+                                            class="search-icon">
+                                    </button>
+                                    <img src="https://cdn.builder.io/api/v1/image/assets/ac6b6ea4d2d54dc49c08994396456689/0866745516c4dd2fc73f7849f88125adfa5174e67511e0d2646f24021121d613?apiKey=ac6b6ea4d2d54dc49c08994396456689&"
+                                        width="127" height="72" alt="HWI Logo" class="mt-4">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-grid">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/ac6b6ea4d2d54dc49c08994396456689/91a2055970cfec8f74f6166de7e26cafa5b32754bfacb60227aa30d9de80ed35?apiKey=ac6b6ea4d2d54dc49c08994396456689&"
+                        alt="News article 1" class="news-grid-image">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/ac6b6ea4d2d54dc49c08994396456689/c6913fc6115bf4721ab22645748a89b2f65d6929bafbbe4f1d763906d3488450?apiKey=ac6b6ea4d2d54dc49c08994396456689&"
+                        alt="News article 2" class="news-grid-image">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/ac6b6ea4d2d54dc49c08994396456689/d651f688f2f7d412994c8cd30ac12c958df92a2af45efc20e7eb485849f22ba6?apiKey=ac6b6ea4d2d54dc49c08994396456689&"
+                        alt="News article 3" class="news-grid-image">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/ac6b6ea4d2d54dc49c08994396456689/eeb3d7ad632b135a788ff5b60bf7008a74ac124965924f675a866c235cd152d5?apiKey=ac6b6ea4d2d54dc49c08994396456689&"
+                        alt="News article 4" class="news-grid-image">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/ac6b6ea4d2d54dc49c08994396456689/10ba19388a7ba98c88f812bade49a338334b72b3d396674cc9d12e501016fd0d?apiKey=ac6b6ea4d2d54dc49c08994396456689&"
+                        alt="News article 5" class="news-grid-image">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/ac6b6ea4d2d54dc49c08994396456689/1fe6aae029ed044049031b51472faa588f517d2d104c689f7ec1402b8693e412?apiKey=ac6b6ea4d2d54dc49c08994396456689&"
+                        alt="News article 6" class="news-grid-image">
+
+                </div>
+            </div>
+        </section>
+        {{-- End News Section --}}
+    </div>
+    {{-- Footer --}}
+    <div class="footer text-center mt-3">
+        <div class="container">
+            <h5>Contact Us</h5>
+            <p>
+                <a href="https://wa.me/6281227916560" class="d-block">
+                    <i class="fab fa-whatsapp"></i> Whats App: +62 812 2791 6560
+                </a>
+                <a href="tel:+12029182132" class="d-block">
+                    <i class="fas fa-phone"></i> Call Us: +62 812 2791 6560
+                </a>
+            </p>
+            <p>© 2024 All rights reserved. PT Hwaseung Indonesia - Jepara</p>
+        </div>
+    </div>
+    {{-- End Footer --}}
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
