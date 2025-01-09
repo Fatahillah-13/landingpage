@@ -74,7 +74,7 @@
         </div>
         {{-- End Carousel --}}
         {{-- Layanan Card --}}
-        <div class="container mt-4">
+        <div class="container mt-4 pb-4">
             <div class="container" id="menu_layanan">
                 <header class="section-header">
                     <h2 class="section-title">
@@ -106,8 +106,8 @@
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="service-item">
                         <div class="service-icon-wrapper">
-                            <img src="{{ asset('assets/info_icon.png') }}"
-                                class="service-icon" alt="Information Service" width="58" height="58">
+                            <img src="{{ asset('assets/info_icon.png') }}" class="service-icon"
+                                alt="Information Service" width="58" height="58">
                         </div>
                         <h3 class="service-title">Information</h3>
                     </div>
@@ -115,8 +115,8 @@
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="service-item">
                         <div class="service-icon-wrapper">
-                            <img src="{{ asset('assets/counseling_icon.png') }}"
-                                class="service-icon" alt="Counseling Service" width="58" height="58">
+                            <img src="{{ asset('assets/counseling_icon.png') }}" class="service-icon"
+                                alt="Counseling Service" width="58" height="58">
                         </div>
                         <h3 class="service-title">Counseling</h3>
                     </div>
@@ -125,8 +125,8 @@
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="service-item">
                         <div class="service-icon-wrapper">
-                            <img src="{{ asset('assets/cuti_icon.png') }}"
-                                class="service-icon" alt="Online Leave Service" width="58" height="58">
+                            <img src="{{ asset('assets/cuti_icon.png') }}" class="service-icon"
+                                alt="Online Leave Service" width="58" height="58">
                         </div>
                         <h3 class="service-title">Cuti Online</h3>
                     </div>
@@ -135,16 +135,123 @@
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="service-item">
                         <div class="service-icon-wrapper">
-                            <img src="{{ asset('assets/resign_icon.png') }}"
-                                class="service-icon" alt="Online Resignation Service" width="58" height="58">
+                            <img src="{{ asset('assets/resign_icon.png') }}" class="service-icon"
+                                alt="Online Resignation Service" width="58" height="58">
                         </div>
                         <h3 class="service-title">Resign Online</h3>
                     </div>
                 </div>
             </div>
         </div>
-        {{-- End Body --}}
-        {{-- Footer --}}
+        {{-- End Layanan Card --}}
+        {{-- Info Loker --}}
+        <div class="container mt-4 pb-4">
+            <div class="container" id="menu_layanan">
+                <header class="section-header" id="job-section">
+                    <h2 class="section-title">
+                        Informasi <span>Lowongan Pekerjaan</span>
+                    </h2>
+                    <div class="header-underline" role="presentation"></div>
+                    <div class="divider" role="presentation"></div>
+                </header>
+            </div>
+            <section class="job-listings container" aria-label="Job Listings">
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <article class="job-card h-98">
+                            <div class="job-content">
+                                <div class="job-header">
+                                    <div class="logo-wrapper">
+                                        <img src="https://cdn.builder.io/api/v1/image/assets/ac6b6ea4d2d54dc49c08994396456689/360c88875bac6f965fd2992d688bd3e295157edca593704242fd9b833ec5cc45?apiKey=ac6b6ea4d2d54dc49c08994396456689&"
+                                            alt="Company logo" class="company-logo">
+                                    </div>
+                                    <h2 class="job-title">Admin<br>Social Media</h2>
+                                    <div class="divider-job" aria-hidden="true"></div>
+                                </div>
+                                <div class="job-details">
+                                    <div class="d-flex flex-wrap">
+                                        <span class="tag">Fulltime</span>
+                                        <span class="tag">Min. S1</span>
+                                        <span class="tag">Ms. Excel</span>
+                                        <span class="tag">Freshgraduate</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <article class="job-card h-98">
+                            <div class="job-content">
+                                <div class="job-header">
+                                    <div class="logo-wrapper">
+                                        <img src="https://cdn.builder.io/api/v1/image/assets/ac6b6ea4d2d54dc49c08994396456689/360c88875bac6f965fd2992d688bd3e295157edca593704242fd9b833ec5cc45?apiKey=ac6b6ea4d2d54dc49c08994396456689&"
+                                            alt="Company logo" class="company-logo">
+                                    </div>
+                                    <h2 class="job-title">Admin<br>Social Media</h2>
+                                    <div class="divider-job" aria-hidden="true"></div>
+                                </div>
+                                <div class="job-details">
+                                    <div class="d-flex flex-wrap">
+                                        <span class="tag">Fulltime</span>
+                                        <span class="tag">Min. S1</span>
+                                        <span class="tag">Ms. Excel</span>
+                                        <span class="tag">Freshgraduate</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <article class="job-card h-98">
+                            <div class="job-content">
+                                <div class="job-header">
+                                    <div class="logo-wrapper">
+                                        <img src="https://cdn.builder.io/api/v1/image/assets/ac6b6ea4d2d54dc49c08994396456689/360c88875bac6f965fd2992d688bd3e295157edca593704242fd9b833ec5cc45?apiKey=ac6b6ea4d2d54dc49c08994396456689&"
+                                            alt="Company logo" class="company-logo">
+                                    </div>
+                                    <h2 class="job-title">Admin<br>Social Media</h2>
+                                    <div class="divider-job" aria-hidden="true"></div>
+                                </div>
+                                <div class="job-details">
+                                    <div class="d-flex flex-wrap">
+                                        <span class="tag">Fulltime</span>
+                                        <span class="tag">Min. S1</span>
+                                        <span class="tag">Ms. Excel</span>
+                                        <span class="tag">Freshgraduate</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <article class="job-card h-98">
+                            <div class="job-content">
+                                <div class="job-header">
+                                    <div class="logo-wrapper">
+                                        <img src="https://cdn.builder.io/api/v1/image/assets/ac6b6ea4d2d54dc49c08994396456689/360c88875bac6f965fd2992d688bd3e295157edca593704242fd9b833ec5cc45?apiKey=ac6b6ea4d2d54dc49c08994396456689&"
+                                            alt="Company logo" class="company-logo">
+                                    </div>
+                                    <h2 class="job-title">Admin<br>Social Media</h2>
+                                    <div class="divider-job" aria-hidden="true"></div>
+                                </div>
+                                <div class="job-details">
+                                    <div class="d-flex flex-wrap">
+                                        <span class="tag">Fulltime</span>
+                                        <span class="tag">Min. S1</span>
+                                        <span class="tag">Ms. Excel</span>
+                                        <span class="tag">Freshgraduate</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+        {{-- End Info Loker --}}
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">

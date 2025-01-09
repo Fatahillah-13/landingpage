@@ -2,6 +2,9 @@
     --primary-color: #008ecc;
     --heading-color: #222;
     --background-light: #f5f5f5;
+    --yellow-tag: #e3bc01;
+    --border-color: #ededed;
+    --white: #fff;
 }
 
 body {
@@ -95,5 +98,110 @@ body {
 
     .service-icon {
         width: 48px;
+    }
+}
+
+.job-listings {
+    padding: 10px 0;
+}
+
+.job-card {
+    border-radius: 16px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0px 109px 80px 0px rgba(0, 142, 204, 0.07),
+        0px 39.787px 29.201px 0px rgba(0, 142, 204, 0.05),
+        0px 19.316px 14.177px 0px rgba(0, 142, 204, 0.04),
+        0px 9.469px 6.95px 0px rgba(0, 142, 204, 0.03),
+        0px 3.744px 2.748px 0px rgba(0, 142, 204, 0.02);
+    width: 227px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    border: 2px solid var(--primary-color);
+}
+
+.job-content {
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    background: var(--primary-color);
+    height: 100%;
+}
+
+.job-header {
+    padding: 15px;
+    position: relative;
+}
+
+.logo-wrapper {
+    background: var(--white);
+    border: var(--white);
+    border-bottom-left-radius: 16px;
+    border-top-right-radius: 14px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 82px;
+    padding: 21px 16px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.company-logo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.72;
+    object-fit: contain;
+}
+
+.job-title {
+    color: var(--white);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 39px;
+    margin-right: 90px;
+}
+
+.divider-job {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 24px 0 8px 0;
+}
+
+.job-details {
+    background: var(--white);
+    border-radius: 0 0 15px 15px;
+    padding: 21px 13px;
+}
+
+.tag {
+    display: inline-block;
+    background: var(--yellow-tag);
+    color: var(--white);
+    border-radius: 4px;
+    padding: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0 4px 8px 0;
+}
+
+.tag-fresh {
+    display: block;
+    margin-top: 7px;
+}
+
+@media (max-width: 991px) {
+    .job-listings .row {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .job-card {
+        width: 100%;
+        max-width: 300px;
     }
 }
