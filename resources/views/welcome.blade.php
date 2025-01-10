@@ -16,7 +16,7 @@
     <nav class="navbar bg-body-tertiary">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="{{ asset('assets/logo2.png') }}" alt="HWI" width="127" height="72">
+                <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="HWI" width="127" height="72">
             </a>
             <form class="d-flex input-group" role="search" style="max-width: 500px;">
                 <span class="input-group-text" id="basic-addon1" style="border: none; background-color: #F3F9FB;">
