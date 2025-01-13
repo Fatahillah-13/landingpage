@@ -8,6 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <title>Laravel</title>
 </head>
 
@@ -84,12 +87,12 @@
                     <div class="divider" role="presentation"></div>
                 </header>
             </div>
-            <div class="row g-4">
+            <div class="row">
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="service-item">
                         <div class="service-icon-wrapper">
                             <img src="{{ asset('assets/bpjs_icon.png') }}" class="service-icon"
-                                alt="BPJS Check Service" width="58" height="58">
+                                alt="BPJS Check Service" width="32" height="32">
                         </div>
                         <h3 class="service-title">Cek BPJS</h3>
                     </div>
@@ -97,8 +100,8 @@
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="service-item">
                         <div class="service-icon-wrapper">
-                            <img src="{{ asset('assets/career_icon.png') }}" class="service-icon-career"
-                                alt="Career Service" width="58" height="58">
+                            <img src="{{ asset('assets/career2_icon.png') }}" class="service-icon"
+                                alt="Career Service" width="32" height="32">
                         </div>
                         <h3 class="service-title">Career</h3>
                     </div>
@@ -107,7 +110,7 @@
                     <div class="service-item">
                         <div class="service-icon-wrapper">
                             <img src="{{ asset('assets/info_icon.png') }}" class="service-icon"
-                                alt="Information Service" width="58" height="58">
+                                alt="Information Service" width="32" height="32">
                         </div>
                         <h3 class="service-title">Information</h3>
                     </div>
@@ -116,7 +119,7 @@
                     <div class="service-item">
                         <div class="service-icon-wrapper">
                             <img src="{{ asset('assets/counseling_icon.png') }}" class="service-icon"
-                                alt="Counseling Service" width="58" height="58">
+                                alt="Counseling Service" width="32" height="32">
                         </div>
                         <h3 class="service-title">Counseling</h3>
                     </div>
@@ -126,7 +129,7 @@
                     <div class="service-item">
                         <div class="service-icon-wrapper">
                             <img src="{{ asset('assets/cuti_icon.png') }}" class="service-icon"
-                                alt="Online Leave Service" width="58" height="58">
+                                alt="Online Leave Service" width="32" height="32">
                         </div>
                         <h3 class="service-title">Cuti Online</h3>
                     </div>
@@ -136,7 +139,7 @@
                     <div class="service-item">
                         <div class="service-icon-wrapper">
                             <img src="{{ asset('assets/resign_icon.png') }}" class="service-icon"
-                                alt="Online Resignation Service" width="58" height="58">
+                                alt="Online Resignation Service" width="32" height="32">
                         </div>
                         <h3 class="service-title">Resign Online</h3>
                     </div>
@@ -146,7 +149,7 @@
                     <div class="service-item">
                         <div class="service-icon-wrapper">
                             <img src="{{ asset('assets/resign_icon.png') }}" class="service-icon"
-                                alt="Online Resignation Service" width="58" height="58">
+                                alt="Online Resignation Service" width="32" height="32">
                         </div>
                         <h3 class="service-title">Resign Online</h3>
                     </div>
@@ -172,8 +175,8 @@
                             <div class="job-content">
                                 <div class="job-header">
                                     <div class="logo-wrapper">
-                                        <img src="https://cdn.builder.io/api/v1/image/assets/ac6b6ea4d2d54dc49c08994396456689/360c88875bac6f965fd2992d688bd3e295157edca593704242fd9b833ec5cc45?apiKey=ac6b6ea4d2d54dc49c08994396456689&"
-                                            alt="Company logo" class="company-logo">
+                                        <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="Company logo"
+                                            class="company-logo">
                                     </div>
                                     <h2 class="job-title">Admin<br>Social Media</h2>
                                     <div class="divider-job" aria-hidden="true"></div>
@@ -195,8 +198,8 @@
                             <div class="job-content">
                                 <div class="job-header">
                                     <div class="logo-wrapper">
-                                        <img src="https://cdn.builder.io/api/v1/image/assets/ac6b6ea4d2d54dc49c08994396456689/360c88875bac6f965fd2992d688bd3e295157edca593704242fd9b833ec5cc45?apiKey=ac6b6ea4d2d54dc49c08994396456689&"
-                                            alt="Company logo" class="company-logo">
+                                        <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="Company logo"
+                                            class="company-logo">
                                     </div>
                                     <h2 class="job-title">Admin<br>Social Media</h2>
                                     <div class="divider-job" aria-hidden="true"></div>
@@ -218,8 +221,8 @@
                             <div class="job-content">
                                 <div class="job-header">
                                     <div class="logo-wrapper">
-                                        <img src="https://cdn.builder.io/api/v1/image/assets/ac6b6ea4d2d54dc49c08994396456689/360c88875bac6f965fd2992d688bd3e295157edca593704242fd9b833ec5cc45?apiKey=ac6b6ea4d2d54dc49c08994396456689&"
-                                            alt="Company logo" class="company-logo">
+                                        <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="Company logo"
+                                            class="company-logo">
                                     </div>
                                     <h2 class="job-title">Admin<br>Social Media</h2>
                                     <div class="divider-job" aria-hidden="true"></div>
@@ -241,8 +244,8 @@
                             <div class="job-content">
                                 <div class="job-header">
                                     <div class="logo-wrapper">
-                                        <img src="https://cdn.builder.io/api/v1/image/assets/ac6b6ea4d2d54dc49c08994396456689/360c88875bac6f965fd2992d688bd3e295157edca593704242fd9b833ec5cc45?apiKey=ac6b6ea4d2d54dc49c08994396456689&"
-                                            alt="Company logo" class="company-logo">
+                                        <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="Company logo"
+                                            class="company-logo">
                                     </div>
                                     <h2 class="job-title">Admin<br>Social Media</h2>
                                     <div class="divider-job" aria-hidden="true"></div>
@@ -264,8 +267,8 @@
                             <div class="job-content">
                                 <div class="job-header">
                                     <div class="logo-wrapper">
-                                        <img src="https://cdn.builder.io/api/v1/image/assets/ac6b6ea4d2d54dc49c08994396456689/360c88875bac6f965fd2992d688bd3e295157edca593704242fd9b833ec5cc45?apiKey=ac6b6ea4d2d54dc49c08994396456689&"
-                                            alt="Company logo" class="company-logo">
+                                        <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="Company logo"
+                                            class="company-logo">
                                     </div>
                                     <h2 class="job-title">Admin<br>Social Media</h2>
                                     <div class="divider-job" aria-hidden="true"></div>
@@ -332,24 +335,106 @@
             </div>
         </section>
         {{-- End News Section --}}
+        {{-- Contact us --}}
+        <div class="container mt-5 p-3" id="contactUs">
+            <h2 class="text-center" style="color: #008ECC">Contact Us</h2>
+            <p class="text-center">Any question or remarks? Just write us a message!</p>
+            <div class="row d-flex justify-content-center pt-3">
+                <div class="col-md-5 mt-2">
+                    <div class="contact-info p-4 bg-light">
+                        <h5>Contact Information</h5>
+                        <p>Say something to start a live chat!</p>
+                        <p><strong>WhatsApp:</strong> +1012 3456 789</p>
+                        <p><strong>Email:</strong> demo@gmail.com</p>
+                        <p><strong>Address:</strong> 132 Dartmouth Street Boston, Massachusetts 02156 United States</p>
+                        <div class="social-icons">
+                            <a href="#" class="pr-2"><i class="bi bi-tiktok"></i></a>
+                            <a href="#" class="p-2"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class=""><i class="bi bi-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form action="">
+                                <div class="form-group mb-3">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" class="form-control" id="firstName"
+                                        placeholder="Enter your first name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email"
+                                        placeholder="Enter your email">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <form action="">
+                                <div class="form-group mb-3">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" value="Doe"
+                                        readonly>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="text" class="form-control" id="phone" value="+012 3456 789"
+                                        readonly>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <form>
+                            {{-- <div class="form-group">
+                                <label for="subject">Select Subject</label>
+                                <div class="form-group mb-3">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input-color:#E0E0E0" type="radio"
+                                            name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <label class="form-check-label" for="inlineRadio1"> Layanan</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input-color:#E0E0E0" type="radio"
+                                            name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <label class="form-check-label" for="inlineRadio2"> Menu</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input-color:#E0E0E0" type="radio"
+                                            name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                        <label class="form-check-label" for="inlineRadio3"> Rekruitment</label>
+                                    </div>
+                                </div>
+                            </div> --}}
+                            <div class="form-group mb-3">
+                                <label for="message">Message</label>
+                                <textarea class="form-control" id="message" rows="3" placeholder="Write your message.."></textarea>
+                            </div>
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button class="btn btn-primary me-md-2" type="submit">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- End Contact us --}}
     </div>
     {{-- Footer --}}
-    <div class="footer text-center mt-3">
+    <div class="footer text-center mt-3 pb-2">
         <div class="container">
-            <h5>Contact Us</h5>
-            <p>
-                <a href="https://wa.me/6281227916560" class="d-block">
-                    <i class="fab fa-whatsapp"></i> Whats App: +62 812 2791 6560
-                </a>
-                <a href="tel:+12029182132" class="d-block">
-                    <i class="fas fa-phone"></i> Call Us: +62 812 2791 6560
-                </a>
-            </p>
-            <p>© 2024 All rights reserved. PT Hwaseung Indonesia - Jepara</p>
+            <a class="navbar-brand" href="#">
+                <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="HWI" width="127"
+                    height="72">
+            </a>
+            <p class="pt-2">© 2024 All rights reserved. PT Hwaseung Indonesia - Jepara</p>
         </div>
     </div>
     {{-- End Footer --}}
 </body>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
 </script>

@@ -11,6 +11,8 @@
     --background-light: #f5f5f5;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 body {
     font-family: "Montserrat", sans-serif;
 }
@@ -56,8 +58,8 @@ body {
 }
 
 .service-icon-wrapper {
-    width: 82px;
-    height: 82px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     background-color: var(--background-light);
     border: 1px solid var(--background-light);
@@ -90,7 +92,7 @@ body {
 .service-title {
     margin-top: 1.25rem;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 14px;
     color: var(--heading-color);
 }
 
@@ -117,7 +119,7 @@ body {
         0px 19.316px 14.177px 0px rgba(0, 142, 204, 0.04),
         0px 9.469px 6.95px 0px rgba(0, 142, 204, 0.03),
         0px 3.744px 2.748px 0px rgba(0, 142, 204, 0.02);
-    width: 227px;
+    width: 212px;
     margin-bottom: 20px;
     transition: transform 0.2s ease;
 }
@@ -135,7 +137,7 @@ body {
 }
 
 .job-header {
-    padding: 15px;
+    padding: 16px;
     position: relative;
 }
 
@@ -146,16 +148,16 @@ body {
     border-top-right-radius: 14px;
     border-top-left-radius: 0;
     border-bottom-right-radius: 0;
-    width: 82px;
-    padding: 21px 16px;
+    width: 64px;
+    padding: 16px 11px;
     position: absolute;
     right: 0;
     top: 0;
 }
 
 .company-logo {
-    width: 100%;
-    height: auto;
+    width: 48px;
+    height: 48px;
     aspect-ratio: 1.72;
     object-fit: contain;
 }
@@ -164,9 +166,9 @@ body {
     color: var(--white);
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 16px;
     line-height: 39px;
-    margin-right: 90px;
+    margin-right: 60px;
 }
 
 .divider-job {
@@ -228,7 +230,7 @@ body {
 
 .news-category {
     color: var(--primary-color);
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.3125rem;
     font-weight: 700;
     line-height: 1;
@@ -236,7 +238,7 @@ body {
 
 .news-main-title {
     color: var(--text-gray);
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 3.125rem;
     font-weight: 700;
     margin-top: 1.25rem;
@@ -244,7 +246,7 @@ body {
 
 .news-subtitle {
     color: var(--text-dark);
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 3.125rem;
     font-weight: 700;
     line-height: 1;
@@ -277,7 +279,7 @@ body {
 }
 
 .search-text {
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 0.875rem;
     color: rgba(66, 75, 90, 1);
 }
@@ -335,4 +337,47 @@ body {
 }
 .footer a {
     color: white;
+}
+
+.footer p {
+    color: #ffffff;
+}
+
+.contact-info {
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-icons a {
+    font-size: 24px;
+    color: #333;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+p {
+    color: #6c757d;
+}
+
+input.form-control,
+textarea.form-control {
+    border: none; /* Menghilangkan border */
+    border-bottom: 2px solid #8d8d8d; /* Menambahkan garis bawah */
+    border-radius: 0; /* Menghilangkan sudut melengkung */
+    box-shadow: none; /* Menghilangkan bayangan */
+}
+
+input.form-control:focus,
+textarea.form-control:focus {
+    outline: none; /* Menghilangkan outline saat fokus */
+    border-bottom: 2px solid #011c2a; /* Mengubah warna garis bawah saat fokus */
+}
+
+#contactUs {
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0px 0px 60px 30px rgba(0, 0, 0, 0.03);
 }
