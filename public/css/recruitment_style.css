@@ -1,19 +1,36 @@
-body {
-    padding: 20px;
+.container-dropdownfilter {
+    padding: 4px;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
 }
 
 .filter-container {
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.filter-title {
-    font-weight: bold;
-    margin-bottom: 10px;
+    width: 250px; /* Adjust width as needed */
 }
 
 .filter-item {
+    border-bottom: 1px solid #bdbbbb;
     margin-bottom: 10px;
+}
+
+.filter-header {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.arrow {
+    float: right;
+}
+
+.filter-submenu {
+    padding: 10px;
+}
+
+.filter-submenu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.filter-submenu li {
+    padding: 5px 0;
 }

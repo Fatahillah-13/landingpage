@@ -15,16 +15,18 @@
 
 <body>
     <div class="container-auto">
-        <nav class="navbar bg-body-tertiary">
+        {{-- Navbar --}}
+        <nav class="navbar bg-body-tertiary" style="background-color: #F3F9FB">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="HWI" width="127" height="72">
+                    <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="HWI" width="110" height="55">
                 </a>
-                <span class="navbar-text d-block" style="font-weight: bold; color: #008ECC;">
-                    Laman Informasi <br> HWI Jepara
+                <span class="navbar-text d-block text-center" style="font-weight: bold; color: #008ECC;">
+                    Laman Informasi <br> Rekrutmen
                 </span>
             </div>
         </nav>
+        {{-- End Navbar --}}
         {{-- Search Bar --}}
         <div class="container mt-4">
             <div class="container col-md-6 align-items-center text-center">
@@ -41,57 +43,63 @@
                         </a>
                     </span>
                     <input type="text" class="form-control text-center"
-                        placeholder="Cari Layanan atau Informasi ...." aria-label="Username"
+                        placeholder="Cari lowongan pekerjaan ...." aria-label="Username"
                         aria-describedby="basic-addon1" style="background-color: #F3F9FB; border: none;">
                 </form>
             </div>
         </div>
         {{-- End Search Bar --}}
         {{-- Filter n Content --}}
-        <div class="row mt-4">
+        <div class="row mt-4 pl-4">
             {{--  Sidebar Filter --}}
-            <div class="col-md-3">
-                <div class="filter-container">
-                    <div class="filter-title">Filter</div>
+            <div class=" col-md-2 filter-container">
+                <h5 class="pb-2">Filter</h5>
+                <div class="shadow p-3 container-dropdownfilter">
                     <div class="filter-item">
-                        <div class="dropdown">
-                            <button class="btn btn-light dropdown-toggle" type="button" id="kategoriDropdown"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Kategori
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="kategoriDropdown">
-                                <!-- Add kategori items here -->
-                            </div>
+                        <div class="filter-header" onclick="toggleFilter('kategori')">
+                            Kategori <span class="arrow">+</span>
+                        </div>
+                        <div id="kategori" class="filter-submenu" style="display: none;">
+                            <ul>
+                                <li><input type="checkbox" id="kategori1"> <label for="kategori1">Fulltime</label></li>
+                                <li><input type="checkbox" id="kategori2"> <label for="kategori2">Kontrak</label></li>
+                                <li><input type="checkbox" id="kategori3"> <label for="kategori3">Intern</label></li>
+                            </ul>
                         </div>
                     </div>
                     <div class="filter-item">
-                        <div class="dropdown">
-                            <button class="btn btn-light dropdown-toggle" type="button" id="lokasiDropdown"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Lokasi
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="lokasiDropdown">
-                                <!-- Add lokasi items here -->
-                            </div>
+                        <div class="filter-header" onclick="toggleFilter('minEdu')">
+                            Min. Pendidikan <span class="arrow">+</span>
+                        </div>
+                        <div id="minEdu" class="filter-submenu" style="display: none;">
+                            <ul>
+                                <li><input type="checkbox" id="kategori1"> <label for="kategori1">SMA</label></li>
+                                <li><input type="checkbox" id="kategori2"> <label for="kategori2">S1</label></li>
+                                <li><input type="checkbox" id="kategori3"> <label for="kategori3">S2</label>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <div class="filter-item">
-                        <div class="dropdown">
-                            <button class="btn btn-light dropdown-toggle" type="button" id="hargaDropdown"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Harga
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="hargaDropdown">
-                                <!-- Add harga items here -->
-                            </div>
+                        <div class="filter-header" onclick="toggleFilter('position')">
+                            Posisi <span class="arrow">+</span>
+                        </div>
+                        <div id="position" class="filter-submenu" style="display: none;">
+                            <ul>
+                                <li><input type="checkbox" id="kategori1"> <label for="kategori1">Operator</label></li>
+                                <li><input type="checkbox" id="kategori2"> <label for="kategori2">Staf</label></li>
+                                <li><input type="checkbox" id="kategori3"> <label for="kategori3">Senior Staf</label>
+                                </li>
+                            </ul>
                         </div>
                     </div>
+                    <!-- Add more filter items as needed -->
                 </div>
             </div>
             {{-- End Sidebar Filter --}}
             {{-- Cards Container --}}
-            <div class="col-md-9">
-                <section class="job-listings container" aria-label="Job Listings">
+            <div class="col-md-10">
+                <section class="job-listings" aria-label="Job Listings">
                     <div class="row g-4">
                         <div class="col-auto">
                             <article class="job-card h-98">
@@ -137,7 +145,6 @@
                                 </div>
                             </article>
                         </div>
-
                         <div class="col-auto">
                             <article class="job-card h-98">
                                 <div class="job-content">
@@ -160,7 +167,6 @@
                                 </div>
                             </article>
                         </div>
-
                         <div class="col-auto">
                             <article class="job-card h-98">
                                 <div class="job-content">
@@ -183,7 +189,6 @@
                                 </div>
                             </article>
                         </div>
-
                         <div class="col-auto">
                             <article class="job-card h-98">
                                 <div class="job-content">
@@ -217,6 +222,27 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Function Toggle Filter
+        function toggleFilter(filterId) {
+            const submenu = document.getElementById(filterId);
+            const arrow = document.querySelector(`#${filterId} ~ .arrow`);
+
+            if (submenu.style.display === 'none') {
+                submenu.style.display = 'block';
+                arrow.textContent = '-';
+            } else {
+                submenu.style.display = 'none';
+                arrow.textContent = '+';
+            }
+        }
+        // Function Selected Menu Filter
+        function getCheckedCheckboxes(filterId) {
+            const checkboxes = document.querySelectorAll(`#${filterId} input[type="checkbox"]:checked`);
+            const selectedFilters = Array.from(checkboxes).map(checkbox => checkbox.nextElementSibling.textContent);
+            console.log("Selected filters:", selectedFilters);
+        }
+    </script>
 </body>
 
 </html>

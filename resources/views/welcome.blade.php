@@ -151,10 +151,10 @@
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="service-item">
                         <div class="service-icon-wrapper">
-                            <img src="{{ asset('assets/resign_icon.png') }}" class="service-icon"
+                            <img src="{{ asset('assets/check_lamaran_icon.png') }}" class="service-icon"
                                 alt="Online Resignation Service" width="32" height="32">
                         </div>
-                        <h3 class="service-title">Resign Online</h3>
+                        <h3 class="service-title">Cek Lamaran</h3>
                     </div>
                 </div>
             </div>
