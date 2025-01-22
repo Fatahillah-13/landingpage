@@ -1,0 +1,600 @@
+:root {
+    --gray-900: rgba(24, 25, 28, 1);
+    --gray-700: rgba(71, 76, 84, 1);
+    --gray-00: rgba(255, 255, 255, 1);
+    --danger-500: rgba(224, 81, 81, 1);
+    --gray-600: rgba(94, 102, 112, 1);
+    --success-500: rgba(11, 160, 44, 1);
+    --gray-500: rgba(118, 127, 140, 1);
+    --danger-50: rgba(255, 237, 237, 1);
+    --primary-500: rgba(10, 101, 204, 1);
+    --graywhite: rgba(255, 255, 255, 1);
+    --primary-50: rgba(231, 240, 250, 1);
+    --heading-04-font-family: "Inter", Helvetica;
+    --heading-04-font-weight: 500;
+    --heading-04-font-size: 24px;
+    --heading-04-letter-spacing: 0px;
+    --heading-04-line-height: 32px;
+    --heading-04-font-style: normal;
+    --body-large-400-font-family: "Inter", Helvetica;
+    --body-large-400-font-weight: 400;
+    --body-large-400-font-size: 18px;
+    --body-large-400-letter-spacing: 0px;
+    --body-large-400-line-height: 28px;
+    --body-large-400-font-style: normal;
+    --body-small-400-font-family: "Inter", Helvetica;
+    --body-small-400-font-weight: 400;
+    --body-small-400-font-size: 14px;
+    --body-small-400-letter-spacing: 0px;
+    --body-small-400-line-height: 20px;
+    --body-small-400-font-style: normal;
+    --button-button-font-family: "Inter", Helvetica;
+    --button-button-font-weight: 600;
+    --button-button-font-size: 16px;
+    --button-button-letter-spacing: 0px;
+    --button-button-line-height: 24px;
+    --button-button-font-style: normal;
+    --body-large-500-font-family: "Inter", Helvetica;
+    --body-large-500-font-weight: 500;
+    --body-large-500-font-size: 18px;
+    --body-large-500-letter-spacing: 0px;
+    --body-large-500-line-height: 28px;
+    --body-large-500-font-style: normal;
+    --body-medium-400-font-family: "Inter", Helvetica;
+    --body-medium-400-font-weight: 400;
+    --body-medium-400-font-size: 16px;
+    --body-medium-400-letter-spacing: 0px;
+    --body-medium-400-line-height: 24px;
+    --body-medium-400-font-style: normal;
+    --body-medium-500-font-family: "Inter", Helvetica;
+    --body-medium-500-font-weight: 500;
+    --body-medium-500-font-size: 16px;
+    --body-medium-500-letter-spacing: 0px;
+    --body-medium-500-line-height: 24px;
+    --body-medium-500-font-style: normal;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    padding: 0px 16px;
+    position: relative;
+}
+
+.body .header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px 600px;
+    padding: 0px 16px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    background-color: #ffffff;
+}
+
+.body .heads {
+    display: flex;
+    width: 606px;
+    align-items: center;
+    position: relative;
+}
+
+.body .head {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+    width: 381px;
+    align-items: center;
+    gap: 0px 0px;
+    position: relative;
+}
+
+.body .logo {
+    display: flex;
+    flex-direction: column;
+    max-width: 230px;
+    width: 193px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+}
+
+.body .LOGO-HWI-BARU-WEB {
+    position: relative;
+    width: 157px;
+    height: 64px;
+    object-fit: cover;
+}
+
+.body .titles {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.body .title {
+    display: flex;
+    width: 143px;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.body .text-wrapper {
+    position: relative;
+    flex: 1;
+    margin-top: -1px;
+    font-family: var(--heading-04-font-family);
+    font-weight: var(--heading-04-font-weight);
+    color: #18191c;
+    font-size: var(--heading-04-font-size);
+    letter-spacing: var(--heading-04-letter-spacing);
+    line-height: var(--heading-04-line-height);
+    font-style: var(--heading-04-font-style);
+}
+
+.body .subtitle {
+    display: flex;
+    width: 167px;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.body .div {
+    position: relative;
+    flex: 1;
+    margin-top: -1px;
+    font-family: var(--body-large-400-font-family);
+    font-weight: var(--body-large-400-font-weight);
+    color: var(--gray-700);
+    font-size: var(--body-large-400-font-size);
+    letter-spacing: var(--body-large-400-letter-spacing);
+    line-height: var(--body-large-400-line-height);
+    font-style: var(--body-large-400-font-style);
+}
+
+.body .badges {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+}
+
+.body .frame {
+    display: flex;
+    width: 288px;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    margin-right: -63px;
+}
+
+.body .div-wrapper {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 4px 12px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: var(--success-500);
+    border-radius: 3px;
+}
+
+.body .text-wrapper-2 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Inter-SemiBold", Helvetica;
+    font-weight: 600;
+    color: var(--gray-00);
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
+}
+
+.body .badge {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 4px 12px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: var(--danger-50);
+    border-radius: 52px;
+}
+
+.body .featured {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--danger-500);
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
+}
+
+.body .button {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    max-width: 200px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 32px;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+    background-color: var(--primary-500);
+    border-radius: 4px;
+}
+
+.body .primary {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: var(--button-button-font-family);
+    font-weight: var(--button-button-font-weight);
+    color: var(--gray-00);
+    font-size: var(--button-button-font-size);
+    letter-spacing: var(--button-button-letter-spacing);
+    line-height: var(--button-button-line-height);
+    white-space: nowrap;
+    font-style: var(--button-button-font-style);
+}
+
+.body .fi-arrow-right {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.body .frame-2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 97px 80px;
+    padding: 0px 24px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.body .frame-3 {
+    display: flex;
+    flex-direction: column;
+    width: 1106px;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 0px 12px;
+    position: relative;
+}
+
+.body .text-wrapper-3 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: var(--body-large-500-font-family);
+    font-weight: var(--body-large-500-font-weight);
+    color: #18191c;
+    font-size: var(--body-large-500-font-size);
+    letter-spacing: var(--body-large-500-letter-spacing);
+    line-height: var(--body-large-500-line-height);
+    white-space: nowrap;
+    font-style: var(--body-large-500-font-style);
+}
+
+.body .p {
+    position: relative;
+    align-self: stretch;
+    font-family: var(--body-medium-400-font-family);
+    font-weight: var(--body-medium-400-font-weight);
+    color: var(--gray-600);
+    font-size: var(--body-medium-400-font-size);
+    letter-spacing: var(--body-medium-400-letter-spacing);
+    line-height: var(--body-medium-400-line-height);
+    font-style: var(--body-medium-400-font-style);
+}
+
+.body .frame-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.body .text-wrapper-4 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--body-medium-500-font-family);
+    font-weight: var(--body-medium-500-font-weight);
+    color: #18191c;
+    font-size: var(--body-medium-500-font-size);
+    letter-spacing: var(--body-medium-500-letter-spacing);
+    line-height: var(--body-medium-500-line-height);
+    font-style: var(--body-medium-500-font-style);
+}
+
+.body .job-information {
+    display: flex;
+    flex-direction: column;
+    width: 388px;
+    align-items: center;
+    gap: 24px;
+    padding: 32px 16px;
+    position: relative;
+    background-color: var(--gray-00);
+    border-radius: 8px;
+    border: 2px solid;
+    border-color: var(--primary-50);
+    box-shadow: 0px 4.92px 3.62px #0a65cc07, 0px 15.11px 10.02px #0a65cc0a,
+        0px 34.22px 24.12px #0a65cc0d, 0px 62px 80px #0a65cc14;
+}
+
+.body .salary-location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 32px 12px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    background-color: var(--graywhite);
+    border-radius: 8px;
+    border: 2px solid;
+    border-color: #e7f0fa;
+}
+
+.body .salary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+}
+
+.body .text-wrapper-5 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: var(--gray-900);
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 24px;
+}
+
+.body .salary-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.body .text-wrapper-6 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: #0ba02c;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 24px;
+}
+
+.body .text-wrapper-7 {
+    position: relative;
+    align-self: stretch;
+    font-family: var(--body-small-400-font-family);
+    font-weight: var(--body-small-400-font-weight);
+    color: #767f8c;
+    font-size: var(--body-small-400-font-size);
+    text-align: center;
+    letter-spacing: var(--body-small-400-letter-spacing);
+    line-height: var(--body-small-400-line-height);
+    font-style: var(--body-small-400-font-style);
+}
+
+.body .line {
+    position: relative;
+    align-self: stretch;
+    width: 2px;
+}
+
+.body .job-location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+}
+
+.body .map-trifold {
+    position: relative;
+    width: 38px;
+    height: 38px;
+}
+
+.body .job-location-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    width: 100%;
+    flex: 0 0 auto;
+    position: relative;
+    align-self: stretch;
+}
+
+.body .text-wrapper-8 {
+    position: relative;
+    align-self: stretch;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #767f8c;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 24px;
+}
+
+.body .frame-5 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.body .text-wrapper-9 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--body-large-500-font-family);
+    font-weight: var(--body-large-500-font-weight);
+    color: #18191c;
+    font-size: var(--body-large-500-font-size);
+    text-align: center;
+    letter-spacing: var(--body-large-500-letter-spacing);
+    line-height: var(--body-large-500-line-height);
+    font-style: var(--body-large-500-font-style);
+}
+
+.body .frame-6 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 24px 24px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.body .info {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.body .img {
+    position: relative;
+    width: 32px;
+    height: 32px;
+}
+
+.body .heading {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.body .job-posted {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--gray-500);
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: 18px;
+    white-space: nowrap;
+}
+
+.body .text-wrapper-10 {
+    position: relative;
+    width: fit-content;
+    font-family: "Inter-Medium", Helvetica;
+    font-weight: 500;
+    color: #18191c;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 20px;
+    white-space: nowrap;
+}
+
+.body .text-wrapper-11 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--gray-500);
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 18px;
+    white-space: nowrap;
+}
+
+.body .info-wrapper {
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.body .stack {
+    position: relative;
+    width: 186px;
+    height: 198px;
+    margin-bottom: -112px;
+    margin-left: -55.5px;
+    margin-right: -55.5px;
+}

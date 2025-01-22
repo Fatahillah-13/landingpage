@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/recruitment_style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/mdb-ui-kit@8.1.0/css/mdb.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-
     <title>Homepage</title>
 </head>
 
 <body>
     {{-- Navigation Bar --}}
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="HWI" width="127" height="72">
@@ -45,17 +45,9 @@
     {{-- Body --}}
     <div class="container mt-3 pb-3">
         {{-- Carousel --}}
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="10000">
+                <div class="carousel-item active">
                     <img src="{{ asset('assets/carousel1.png') }}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
@@ -64,13 +56,26 @@
                 <div class="carousel-item">
                     <img src="{{ asset('assets/carousel3.jpg') }}" class="d-block w-100" alt="...">
                 </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('assets/carousel4.jpg') }}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('assets/carousel5.jpg') }}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('assets/carousel6.jpg') }}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('assets/carousel7.jpg') }}" class="d-block w-100" alt="...">
+                </div>
+
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
                 data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
@@ -149,13 +154,27 @@
                 </div>
 
                 <div class="col-6 col-md-4 col-lg-2">
-                    <div class="service-item">
-                        <div class="service-icon-wrapper">
-                            <img src="{{ asset('assets/check_lamaran_icon.png') }}" class="service-icon"
-                                alt="Online Resignation Service" width="32" height="32">
+                    <a href="{{ route('check_recruitment') }}" style="text-decoration: none">
+                        <div class="service-item">
+                            <div class="service-icon-wrapper">
+                                <img src="{{ asset('assets/check_lamaran_icon.png') }}" class="service-icon"
+                                    alt="Online Resignation Service" width="32" height="32">
+                            </div>
+                            <h3 class="service-title">Cek Lamaran</h3>
                         </div>
-                        <h3 class="service-title">Cek Lamaran</h3>
-                    </div>
+                    </a>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-2">
+                    <a href="{{ route('e_payslip') }}" style="text-decoration: none">
+                        <div class="service-item">
+                            <div class="service-icon-wrapper">
+                                <img src="{{ asset('assets/payslip.png') }}" class="service-icon"
+                                    alt="Online Resignation Service" width="32" height="32">
+                            </div>
+                            <h3 class="service-title">Payslip</h3>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

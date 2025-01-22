@@ -1,0 +1,214 @@
+:root {
+    --core-white: rgba(255, 255, 255, 1);
+    --gray-gray-50: rgba(249, 250, 251, 1);
+    --gray-gray-100: rgba(244, 245, 247, 1);
+    --gray-gray-200: rgba(229, 231, 235, 1);
+    --gray-gray-300: rgba(210, 214, 220, 1);
+    --gray-gray-400: rgba(159, 166, 178, 1);
+    --gray-gray-500: rgba(107, 114, 128, 1);
+    --gray-gray-600: rgba(75, 85, 99, 1);
+    --gray-gray-700: rgba(55, 65, 81, 1);
+    --gray-gray-800: rgba(37, 47, 63, 1);
+    --gray-gray-900: rgba(22, 30, 46, 1);
+    --blue-blue-100: rgba(229, 245, 255, 1);
+    --blue-blue-300: rgba(126, 196, 246, 1);
+    --blue-blue-500: rgba(0, 120, 212, 1);
+    --blue-blue-600: rgba(25, 96, 166, 1);
+    --red-red-500: rgba(224, 30, 90, 1);
+    --green-green-400: rgba(49, 196, 141, 1);
+    --base-white: rgba(255, 255, 255, 1);
+    --x-blue-600: rgba(61, 78, 172, 1);
+    --x-gray-700: rgba(60, 66, 87, 1);
+    --x-gray-500: rgba(105, 115, 134, 1);
+    --small-400-font-family: "Inter", Helvetica;
+    --small-400-font-weight: 400;
+    --small-400-font-size: 12px;
+    --small-400-letter-spacing: 0px;
+    --small-400-line-height: 16px;
+    --small-400-font-style: normal;
+    --body-500-font-family: "Inter", Helvetica;
+    --body-500-font-weight: 500;
+    --body-500-font-size: 14px;
+    --body-500-letter-spacing: 0px;
+    --body-500-line-height: 20px;
+    --body-500-font-style: normal;
+}
+
+.arrow-stepper-steps {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 8px;
+    position: relative;
+}
+
+.arrow-stepper-steps .atoms-arrow-stepper {
+    position: relative;
+    width: 210px;
+    height: 56px;
+}
+
+.arrow-stepper-steps .overlap-group-wrapper {
+    height: 56px;
+}
+
+.arrow-stepper-steps .overlap-group {
+    width: 229px;
+    left: -2px;
+    background-image: url(https://c.animaapp.com/9C3rfHak/img/bg.svg);
+    position: relative;
+    height: 60px;
+    top: -1px;
+    background-size: 100% 100%;
+}
+
+.arrow-stepper-steps .title-help-text {
+    width: 162px;
+    left: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    top: 0px;
+}
+
+.arrow-stepper-steps .step-name {
+    color: var(--base-white);
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--body-500-font-family);
+    font-weight: var(--body-500-font-weight);
+    font-size: var(--body-500-font-size);
+    letter-spacing: var(--body-500-letter-spacing);
+    line-height: var(--body-500-line-height);
+    font-style: var(--body-500-font-style);
+}
+
+.arrow-stepper-steps .short-step {
+    color: var(--base-white);
+    position: relative;
+    align-self: stretch;
+    font-family: var(--small-400-font-family);
+    font-weight: var(--small-400-font-weight);
+    font-size: var(--small-400-font-size);
+    letter-spacing: var(--small-400-letter-spacing);
+    line-height: var(--small-400-line-height);
+    font-style: var(--small-400-font-style);
+}
+
+.arrow-stepper-steps .title-help-text-wrapper {
+    position: relative;
+    width: 227px;
+    height: 60px;
+    top: -1px;
+    left: 1px;
+    background-image: url(https://c.animaapp.com/9C3rfHak/img/bg-1.svg);
+    background-size: 100% 100%;
+}
+
+.arrow-stepper-steps .div {
+    display: flex;
+    flex-direction: column;
+    width: 162px;
+    align-items: flex-start;
+    position: relative;
+    top: 11px;
+    left: 31px;
+}
+
+.arrow-stepper-steps .text-wrapper {
+    color: var(--x-blue-600);
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--body-500-font-family);
+    font-weight: var(--body-500-font-weight);
+    font-size: var(--body-500-font-size);
+    letter-spacing: var(--body-500-letter-spacing);
+    line-height: var(--body-500-line-height);
+    font-style: var(--body-500-font-style);
+}
+
+.arrow-stepper-steps .short-step-2 {
+    color: var(--x-blue-600);
+    position: relative;
+    align-self: stretch;
+    font-family: var(--small-400-font-family);
+    font-weight: var(--small-400-font-weight);
+    font-size: var(--small-400-font-size);
+    letter-spacing: var(--small-400-letter-spacing);
+    line-height: var(--small-400-line-height);
+    font-style: var(--small-400-font-style);
+}
+
+.arrow-stepper-steps .overlap-wrapper {
+    position: relative;
+    width: 209px;
+    height: 56px;
+}
+
+.arrow-stepper-steps .overlap {
+    width: 226px;
+    left: 1px;
+    background-image: url(https://c.animaapp.com/9C3rfHak/img/bg-2.svg);
+    position: relative;
+    height: 60px;
+    top: -1px;
+    background-size: 100% 100%;
+}
+
+.arrow-stepper-steps .title-help-text-2 {
+    width: 161px;
+    left: 31px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    top: 11px;
+}
+
+.arrow-stepper-steps .step-name-2 {
+    position: relative;
+    align-self: stretch;
+    margin-top: -1px;
+    font-family: var(--body-500-font-family);
+    font-weight: var(--body-500-font-weight);
+    color: var(--x-gray-700);
+    font-size: var(--body-500-font-size);
+    letter-spacing: var(--body-500-letter-spacing);
+    line-height: var(--body-500-line-height);
+    font-style: var(--body-500-font-style);
+}
+
+.arrow-stepper-steps .short-step-3 {
+    position: relative;
+    align-self: stretch;
+    font-family: var(--small-400-font-family);
+    font-weight: var(--small-400-font-weight);
+    color: var(--x-gray-500);
+    font-size: var(--small-400-font-size);
+    letter-spacing: var(--small-400-letter-spacing);
+    line-height: var(--small-400-line-height);
+    font-style: var(--small-400-font-style);
+}
+
+.arrow-stepper-steps .div-wrapper {
+    width: 227px;
+    left: 1px;
+    background-image: url(https://c.animaapp.com/9C3rfHak/img/bg-3.svg);
+    position: relative;
+    height: 60px;
+    top: -1px;
+    background-size: 100% 100%;
+}
+
+.arrow-stepper-steps .overlap-2 {
+    width: 211px;
+    left: 1px;
+    background-image: url(https://c.animaapp.com/9C3rfHak/img/bg-4.svg);
+    position: relative;
+    height: 60px;
+    top: -1px;
+    background-size: 100% 100%;
+}
