@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
 </head>
 
 <body>
@@ -42,157 +43,181 @@
     </nav>
     {{-- End Navigation Bar --}}
     {{-- Body --}}
-    <div class="body">
-        <header class="header">
-            <div class="heads">
-                <div class="head">
-                    <div class="logo"><img class="LOGO-HWI-BARU-WEB"
-                            src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" /></div>
-                    <div class="titles">
-                        <div class="title">
-                            <div class="text-wrapper">UX Designer</div>
+    <div class="recruitmentdetail">
+        <div class="frame-parent">
+            <div class="frame-group">
+                <div class="logo-hwi-baru-web-1-parent">
+                    <img class="logo-hwi-baru-web-1" alt="" src="{{ asset('assets/LOGO HWI BARU WEB.png') }}">
+                    <div class="heading-parent">
+                        <div class="laman-informasi-hwi-jepara-wrapper">
+                            <div class="ux-designer">UX Designer</div>
                         </div>
-                        <div class="subtitle">
-                            <div class="div">at HRD Department</div>
+                        <div class="at-hrd-department-parent">
+                            <div class="at-hrd-department">at HRD Department</div>
+                            <div class="full-time-wrapper">
+                                <div class="full-time">FULL-TIME</div>
+                            </div>
+                            <div class="level-badge">
+                                <div class="featured">Entry Level</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="badges">
-                    <div class="frame">
-                        <div class="div-wrapper">
-                            <div class="text-wrapper-2">FULL-TIME</div>
-                        </div>
-                        <div class="badge">
-                            <div class="featured">New</div>
-                        </div>
-                    </div>
+                <div class="button">
+                    <div class="primary">Apply now</div>
+                    <img class="fiarrow-right-icon" alt="" src="{{ asset('assets/fi_arrow-right.svg') }}">
                 </div>
             </div>
-            <button class="button">
-                <div class="primary">Apply Now</div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
-                    class="bi bi-arrow-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
-                </svg>
-            </button>
-        </header>
-        <div class="frame-2">
-            <div class="frame-3">
-                <div class="text-wrapper-3">Job Description</div>
-                <p class="p">
-                    Velstar is a Shopify Plus agency, and we partner with brands to help them grow, we also do the same
-                    with our
-                    people!
-                </p>
-                <ul class="p">
-                    <li>
-                        Here at Velstar, we don&#39;t just make websites, we create exceptional digital experiences that
-                        consumers
-                        love.
-                    </li>
-                    <li>
-                        Our team of designers, developers, strategists, and creators work together to push brands to
-                        the next
-                        level.
-                    </li>
-
-                </ul>
-                <p class="p">Want to work with us? You&#39;re in good company!</p>
-                <div class="frame-4">
-                    <div class="text-wrapper-4">Requirements</div>
-                    <p class="p">
-                        Great troubleshooting and analytical skills combined with the desire to tackle challenges
-                        head-on<br />3+
-                        years of experience in back-end development working either with multiple smaller projects
-                        simultaneously
-                        or large-scale applications
-                    </p>
+            <div class="job-description-parent">
+                <div class="job-description">Job Description</div>
+                <div class="velstar-is-a">Velstar is a Shopify Plus agency, and we partner with brands to help them
+                    grow, we also do the same with our people!</div>
+                <div class="velstar-is-a">Here at Velstar, we don't just make websites, we create exceptional digital
+                    experiences that consumers love. Our team of designers, developers, strategists, and creators work
+                    together to push brands to the next level. From Platform Migration, User Experience & User Interface
+                    Design, to Digital Marketing, we have a proven track record in delivering outstanding eCommerce
+                    solutions and driving sales for our clients.</div>
+                <div class="velstar-is-a">Want to work with us? You're in good company!</div>
+                <div class="requirements-parent">
+                    <div class="requirements">Requirements</div>
+                    <div class="velstar-is-a">
+                        <ul class="great-troubleshooting-and-anal">
+                            <li class="great-troubleshooting-and">Great troubleshooting and analytical skills combined
+                                with the desire to tackle challenges head-on</li>
+                            <li class="great-troubleshooting-and">3+ years of experience in back-end development working
+                                either with multiple smaller projects simultaneously or large-scale applications</li>
+                            <li class="great-troubleshooting-and">Experience with HTML, JavaScript, CSS, PHP, Symphony
+                                and/or Laravel</li>
+                            <li>Working regularly with APIs and Web Services (REST, GrapthQL, SOAP, etc)</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="frame-4">
-                    <div class="text-wrapper-4">Desirable:</div>
-                    <p class="p">
-                        Working knowledge of eCommerce platforms, ideally Shopify but also others e.g. Magento,
-                        WooCommerce,
-                        Visualsoft to enable seamless migrations.<br />Working knowledge of payment gateways<br />API
-                        platform
-                        experience / Building restful APIs
-                    </p>
+                <div class="requirements-parent">
+                    <div class="requirements">Desirable:</div>
+                    <div class="velstar-is-a">
+                        <ul class="great-troubleshooting-and-anal">
+                            <li class="great-troubleshooting-and">Working knowledge of eCommerce platforms, ideally
+                                Shopify but also others e.g. Magento, WooCommerce, Visualsoft to enable seamless
+                                migrations.</li>
+                            <li class="great-troubleshooting-and">Working knowledge of payment gateways</li>
+                            <li>API platform experience / Building restful APIs</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="frame-4">
-                    <div class="text-wrapper-4">Benefits</div>
-                    <p class="p">
-                        Early finish on Fridays for our end of week catch up (4:30 finish, and drink of your choice from
-                        the
-                        bar)<br />28 days holiday (including bank holidays) rising by 1 day per year PLUS an additional
-                        day off on
-                        your birthday<br />Generous annual bonus.<br />Healthcare package
-                    </p>
+                <div class="requirements-parent">
+                    <div class="requirements">Benefits</div>
+                    <div class="velstar-is-a">
+                        <ul class="great-troubleshooting-and-anal">
+                            <li class="great-troubleshooting-and">Early finish on Fridays for our end of week catch up
+                                (4:30 finish, and drink of your choice from the bar)</li>
+                            <li class="great-troubleshooting-and">28 days holiday (including bank holidays) rising by 1
+                                day per year PLUS an additional day off on your birthday</li>
+                            <li class="great-troubleshooting-and">Generous annual bonus.</li>
+                            <li class="great-troubleshooting-and">Healthcare package</li>
+                            <li class="great-troubleshooting-and">Paid community days to volunteer for a charity of
+                                your choice</li>
+                            <li class="great-troubleshooting-and">£100 contribution for your own personal learning and
+                                development</li>
+                            <li class="great-troubleshooting-and">Free Breakfast on Mondays and free snacks in the
+                                office</li>
+                            <li class="great-troubleshooting-and">Access to Perkbox with numerous discounts plus free
+                                points from the company to spend as you wish.</li>
+                            <li class="great-troubleshooting-and">Cycle 2 Work Scheme</li>
+                            <li class="great-troubleshooting-and">Brand new MacBook Pro</li>
+                            <li>Joining an agency on the cusp of exponential growth and being part of this exciting
+                                story.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="job-information">
                 <div class="salary-location">
                     <div class="salary">
-                        <div class="text-wrapper-5">Salary (IDR)</div>
-                        <div class="salary-2">
-                            <div class="text-wrapper-6">Rp13,500,000</div>
-                            <div class="text-wrapper-7">Monthly Salary</div>
+                        <div class="requirements">Salary (IDR)</div>
+                        <div class="salary1">
+                            <div class="requirements">Rp13,500,000</div>
+                            <div class="monthly-salary">Monthly Salary</div>
                         </div>
                     </div>
-                    <img class="line" src="img/line-115.svg" />
+                    <div class="salary-location-child">
+                    </div>
                     <div class="job-location">
-                        <img class="map-trifold" src="img/map-trifold.svg" />
-                        <div class="job-location-2">
-                            <div class="text-wrapper-5">Job Location</div>
-                            <div class="text-wrapper-8">Kalinyamatan, Jepara</div>
+                        <img class="maptrifold-icon" alt="" src="{{asset('assets/MapTrifold.svg')}}">
+                        <div class="job-location1">
+                            <div class="requirements">Job Location</div>
+                            <div class="kalinyamatan-jepara">Kalinyamatan, Jepara</div>
                         </div>
                     </div>
                 </div>
-                <div class="frame-5">
-                    <div class="text-wrapper-9">Job Overview</div>
-                    <div class="frame-6">
+                <div class="job-overview-parent">
+                    <div class="job-overview">Job Overview</div>
+                    <div class="info-parent">
                         <div class="info">
-                            <img class="img" src="img/calendar-blank.svg" />
-                            <div class="heading">
-                                <div class="job-posted">JOB POSTED:</div>
-                                <div class="text-wrapper-10">14 Jun, 2021</div>
+                            <img class="calendarblank-icon" alt="" src="{{asset('assets/CalendarBlank.svg')}}">
+                            <div class="heading1">
+                                <div class="job-posted">Job Posted:</div>
+                                <div class="jun-2021">14 Jun, 2021</div>
                             </div>
                         </div>
-                        <div class="info">
-                            <img class="img" src="img/timer.svg" />
-                            <div class="heading">
-                                <div class="text-wrapper-11">JOB EXPIRE IN:</div>
-                                <div class="text-wrapper-10">14 Aug, 2021</div>
+                        <div class="info1">
+                            <img class="calendarblank-icon" alt="" src="{{asset('assets/Timer.svg')}}">
+                            <div class="heading1">
+                                <div class="job-posted">Job expire in:</div>
+                                <div class="smasmk">14 Aug, 2021</div>
                             </div>
                         </div>
                         <div class="info-wrapper">
-                            <div class="info">
-                                <img class="img" src="img/briefcase.svg" />
-                                <div class="heading">
-                                    <div class="text-wrapper-11">EDUCATION</div>
-                                    <div class="text-wrapper-10">SMA/SMK</div>
+                            <div class="info1">
+                                <img class="briefcase-icon" alt="" src="{{asset('assets/briefcase.svg')}}">
+                                <div class="heading1">
+                                    <div class="job-posted">Education</div>
+                                    <div class="smasmk">SMA/SMK</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="info">
-                            <img class="img" src="img/wallet.svg" />
-                            <div class="heading">
-                                <div class="text-wrapper-11">EXPERIENCE</div>
-                                <div class="text-wrapper-10">0 -1 Year</div>
+                        <div class="info1">
+                            <img class="calendarblank-icon" alt="" src="{{asset('assets/Wallet.svg')}}">
+                            <div class="heading1">
+                                <div class="job-posted">Experience</div>
+                                <div class="smasmk">0 -1 Year</div>
                             </div>
                         </div>
-                        <div class="info">
-                            <img class="stack" src="img/stack.svg" />
-                            <div class="heading">
-                                <div class="text-wrapper-11">JOB LEVEL:</div>
-                                <div class="text-wrapper-10">Entry Level</div>
+                        <div class="info1">
+                            <img class="calendarblank-icon" alt="" src="{{asset('assets/Stack.svg')}}">
+                            <div class="heading1">
+                                <div class="job-posted">Job Level:</div>
+                                <div class="smasmk">Entry Level</div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="job-information-child">
+                </div>
+                <div class="share-this-job-parent">
+                    <div class="job-overview">Share this job:</div>
+                    <div class="social-button-parent">
+                        <div class="social-button">
+                            <img class="linksimple-icon" alt="" src="{{asset('assets/LinkSimple.svg')}}">
+                            <div class="copy-links">Copy Links</div>
+                        </div>
+                        <div class="social-button1">
+                            <img class="social-icon" alt="" src="{{asset('assets/Social icon.svg')}}">
+                        </div>
+                        <div class="social-button2">
+                            <img class="social-icon" alt="" src="{{asset('assets/Social icon2.svg')}}">
+                        </div>
+                        <div class="social-button1">
+                            <img class="social-icon" alt="" src="{{asset('assets/Social icon3.svg')}}">
+                        </div>
+                        <div class="social-button4">
+                            <img class="linksimple-icon" alt="" src="{{asset('assets/Envelope.svg')}}">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     {{-- End of Body --}}
     {{-- Footer --}}
     <div class="container"></div>

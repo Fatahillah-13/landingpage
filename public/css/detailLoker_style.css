@@ -1,600 +1,489 @@
-:root {
-    --gray-900: rgba(24, 25, 28, 1);
-    --gray-700: rgba(71, 76, 84, 1);
-    --gray-00: rgba(255, 255, 255, 1);
-    --danger-500: rgba(224, 81, 81, 1);
-    --gray-600: rgba(94, 102, 112, 1);
-    --success-500: rgba(11, 160, 44, 1);
-    --gray-500: rgba(118, 127, 140, 1);
-    --danger-50: rgba(255, 237, 237, 1);
-    --primary-500: rgba(10, 101, 204, 1);
-    --graywhite: rgba(255, 255, 255, 1);
-    --primary-50: rgba(231, 240, 250, 1);
-    --heading-04-font-family: "Inter", Helvetica;
-    --heading-04-font-weight: 500;
-    --heading-04-font-size: 24px;
-    --heading-04-letter-spacing: 0px;
-    --heading-04-line-height: 32px;
-    --heading-04-font-style: normal;
-    --body-large-400-font-family: "Inter", Helvetica;
-    --body-large-400-font-weight: 400;
-    --body-large-400-font-size: 18px;
-    --body-large-400-letter-spacing: 0px;
-    --body-large-400-line-height: 28px;
-    --body-large-400-font-style: normal;
-    --body-small-400-font-family: "Inter", Helvetica;
-    --body-small-400-font-weight: 400;
-    --body-small-400-font-size: 14px;
-    --body-small-400-letter-spacing: 0px;
-    --body-small-400-line-height: 20px;
-    --body-small-400-font-style: normal;
-    --button-button-font-family: "Inter", Helvetica;
-    --button-button-font-weight: 600;
-    --button-button-font-size: 16px;
-    --button-button-letter-spacing: 0px;
-    --button-button-line-height: 24px;
-    --button-button-font-style: normal;
-    --body-large-500-font-family: "Inter", Helvetica;
-    --body-large-500-font-weight: 500;
-    --body-large-500-font-size: 18px;
-    --body-large-500-letter-spacing: 0px;
-    --body-large-500-line-height: 28px;
-    --body-large-500-font-style: normal;
-    --body-medium-400-font-family: "Inter", Helvetica;
-    --body-medium-400-font-weight: 400;
-    --body-medium-400-font-size: 16px;
-    --body-medium-400-letter-spacing: 0px;
-    --body-medium-400-line-height: 24px;
-    --body-medium-400-font-style: normal;
-    --body-medium-500-font-family: "Inter", Helvetica;
-    --body-medium-500-font-weight: 500;
-    --body-medium-500-font-size: 16px;
-    --body-medium-500-letter-spacing: 0px;
-    --body-medium-500-line-height: 24px;
-    --body-medium-500-font-style: normal;
+.group-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 10px;
+    background-color: #f3f9fb;
+    width: 507px;
+    height: 48px;
 }
-
-.body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-    padding: 0px 16px;
+.rectangle-parent {
+    width: 507px;
     position: relative;
+    height: 48px;
 }
-
-.body .header {
+.frame-container {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 20px 600px;
-    padding: 0px 16px;
-    position: relative;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.frame-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 16px;
+    color: #008ecc;
+}
+.image-15-parent {
     align-self: stretch;
-    width: 100%;
-    flex: 0 0 auto;
-    background-color: #ffffff;
-}
-
-.body .heads {
+    background-color: #f2f2f2;
+    height: 120px;
     display: flex;
-    width: 606px;
-    align-items: center;
-    position: relative;
-}
-
-.body .head {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 600px;
-    width: 381px;
-    align-items: center;
-    gap: 0px 0px;
-    position: relative;
-}
-
-.body .logo {
-    display: flex;
-    flex-direction: column;
-    max-width: 230px;
-    width: 193px;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    position: relative;
+    gap: 125px;
 }
-
-.body .LOGO-HWI-BARU-WEB {
-    position: relative;
+.logo-hwi-baru-web-1 {
     width: 157px;
+    position: relative;
     height: 64px;
     object-fit: cover;
 }
-
-.body .titles {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+.ux-designer {
     position: relative;
-    flex: 0 0 auto;
-}
-
-.body .title {
-    display: flex;
-    width: 143px;
-    align-items: center;
-    gap: 8px;
-    position: relative;
-    flex: 0 0 auto;
-}
-
-.body .text-wrapper {
-    position: relative;
-    flex: 1;
-    margin-top: -1px;
-    font-family: var(--heading-04-font-family);
-    font-weight: var(--heading-04-font-weight);
-    color: #18191c;
-    font-size: var(--heading-04-font-size);
-    letter-spacing: var(--heading-04-letter-spacing);
-    line-height: var(--heading-04-line-height);
-    font-style: var(--heading-04-font-style);
-}
-
-.body .subtitle {
-    display: flex;
-    width: 167px;
-    align-items: center;
-    gap: 8px;
-    position: relative;
-    flex: 0 0 auto;
-}
-
-.body .div {
-    position: relative;
-    flex: 1;
-    margin-top: -1px;
-    font-family: var(--body-large-400-font-family);
-    font-weight: var(--body-large-400-font-weight);
-    color: var(--gray-700);
-    font-size: var(--body-large-400-font-size);
-    letter-spacing: var(--body-large-400-letter-spacing);
-    line-height: var(--body-large-400-line-height);
-    font-style: var(--body-large-400-font-style);
-}
-
-.body .badges {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    position: relative;
-    flex: 1;
-    flex-grow: 1;
-}
-
-.body .frame {
-    display: flex;
-    width: 288px;
-    align-items: center;
-    gap: 8px;
-    position: relative;
-    margin-right: -63px;
-}
-
-.body .div-wrapper {
-    display: inline-flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 4px 12px;
-    position: relative;
-    flex: 0 0 auto;
-    background-color: var(--success-500);
-    border-radius: 3px;
-}
-
-.body .text-wrapper-2 {
-    position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: "Inter-SemiBold", Helvetica;
-    font-weight: 600;
-    color: var(--gray-00);
-    font-size: 14px;
-    letter-spacing: 0;
-    line-height: 20px;
-    white-space: nowrap;
-}
-
-.body .badge {
-    display: inline-flex;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 4px 12px;
-    position: relative;
-    flex: 0 0 auto;
-    background-color: var(--danger-50);
-    border-radius: 52px;
-}
-
-.body .featured {
-    position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: var(--danger-500);
-    font-size: 14px;
-    letter-spacing: 0;
-    line-height: 20px;
-    white-space: nowrap;
-}
-
-.body .button {
-    all: unset;
-    box-sizing: border-box;
-    display: flex;
-    max-width: 200px;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 16px 32px;
-    position: relative;
-    flex: 1;
-    flex-grow: 1;
-    background-color: var(--primary-500);
-    border-radius: 4px;
-}
-
-.body .primary {
-    position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: var(--button-button-font-family);
-    font-weight: var(--button-button-font-weight);
-    color: var(--gray-00);
-    font-size: var(--button-button-font-size);
-    letter-spacing: var(--button-button-letter-spacing);
-    line-height: var(--button-button-line-height);
-    white-space: nowrap;
-    font-style: var(--button-button-font-style);
-}
-
-.body .fi-arrow-right {
-    position: relative;
-    width: 24px;
-    height: 24px;
-}
-
-.body .frame-2 {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 97px 80px;
-    padding: 0px 24px;
-    position: relative;
-    align-self: stretch;
-    width: 100%;
-    flex: 0 0 auto;
-}
-
-.body .frame-3 {
-    display: flex;
-    flex-direction: column;
-    width: 1106px;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 0px 12px;
-    position: relative;
-}
-
-.body .text-wrapper-3 {
-    position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: var(--body-large-500-font-family);
-    font-weight: var(--body-large-500-font-weight);
-    color: #18191c;
-    font-size: var(--body-large-500-font-size);
-    letter-spacing: var(--body-large-500-letter-spacing);
-    line-height: var(--body-large-500-line-height);
-    white-space: nowrap;
-    font-style: var(--body-large-500-font-style);
-}
-
-.body .p {
-    position: relative;
-    align-self: stretch;
-    font-family: var(--body-medium-400-font-family);
-    font-weight: var(--body-medium-400-font-weight);
-    color: var(--gray-600);
-    font-size: var(--body-medium-400-font-size);
-    letter-spacing: var(--body-medium-400-letter-spacing);
-    line-height: var(--body-medium-400-line-height);
-    font-style: var(--body-medium-400-font-style);
-}
-
-.body .frame-4 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    position: relative;
-    align-self: stretch;
-    width: 100%;
-    flex: 0 0 auto;
-}
-
-.body .text-wrapper-4 {
-    position: relative;
-    align-self: stretch;
-    margin-top: -1px;
-    font-family: var(--body-medium-500-font-family);
-    font-weight: var(--body-medium-500-font-weight);
-    color: #18191c;
-    font-size: var(--body-medium-500-font-size);
-    letter-spacing: var(--body-medium-500-letter-spacing);
-    line-height: var(--body-medium-500-line-height);
-    font-style: var(--body-medium-500-font-style);
-}
-
-.body .job-information {
-    display: flex;
-    flex-direction: column;
-    width: 388px;
-    align-items: center;
-    gap: 24px;
-    padding: 32px 16px;
-    position: relative;
-    background-color: var(--gray-00);
-    border-radius: 8px;
-    border: 2px solid;
-    border-color: var(--primary-50);
-    box-shadow: 0px 4.92px 3.62px #0a65cc07, 0px 15.11px 10.02px #0a65cc0a,
-        0px 34.22px 24.12px #0a65cc0d, 0px 62px 80px #0a65cc14;
-}
-
-.body .salary-location {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 32px 12px;
-    position: relative;
-    align-self: stretch;
-    width: 100%;
-    flex: 0 0 auto;
-    background-color: var(--graywhite);
-    border-radius: 8px;
-    border: 2px solid;
-    border-color: #e7f0fa;
-}
-
-.body .salary {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    position: relative;
-    flex: 1;
-    flex-grow: 1;
-}
-
-.body .text-wrapper-5 {
-    position: relative;
-    align-self: stretch;
-    margin-top: -1px;
-    font-family: "Inter-Medium", Helvetica;
+    line-height: 32px;
     font-weight: 500;
-    color: var(--gray-900);
-    font-size: 16px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: 24px;
 }
-
-.body .salary-2 {
+.at-hrd-department {
+    position: relative;
+    font-size: 18px;
+    line-height: 28px;
+}
+.full-time {
+    position: relative;
+    line-height: 20px;
+    font-weight: 600;
+}
+.full-time-wrapper {
+    border-radius: 3px;
+    background-color: #0ba02c;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 4px 12px;
+    color: #fff;
+}
+.featured {
+    color: #0ba02c;
+    position: relative;
+    line-height: 20px;
+    font-weight: 600;
+}
+.level-badge {
+    border-radius: 3px;
+    background-color: #ffeded;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 4px 12px;
+    color: #e05151;
+}
+.at-hrd-department-parent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    font-size: 14px;
+    color: #474c54;
+}
+.heading-parent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.logo-hwi-baru-web-1-parent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+}
+.primary {
+    position: relative;
+    line-height: 24px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+.fiarrow-right-icon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.button {
+    width: 248px;
+    border-radius: 4px;
+    background-color: #0a65cc;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    box-sizing: border-box;
+    gap: 12px;
+    font-size: 16px;
+    color: #fff;
+}
+.frame-group {
+    width: 1200px;
+    background-color: #fff;
+    height: 72px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.job-description {
+    align-self: stretch;
+    position: relative;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+}
+.velstar-is-a {
+    align-self: stretch;
+    position: relative;
+    line-height: 24px;
+    color: #5e6670;
+}
+.requirements {
+    align-self: stretch;
+    position: relative;
+    line-height: 24px;
+    font-weight: 500;
+}
+.great-troubleshooting-and {
+    margin-bottom: 0px;
+}
+.great-troubleshooting-and-anal {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    padding-left: 21px;
+}
+.requirements-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.job-description-parent {
+    width: 753px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+    font-size: 16px;
+}
+.monthly-salary {
+    align-self: stretch;
+    position: relative;
+    font-size: 14px;
+    line-height: 20px;
+    color: #767f8c;
+}
+.salary1 {
+    align-self: stretch;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 4px;
-    position: relative;
-    align-self: stretch;
-    width: 100%;
-    flex: 0 0 auto;
-}
-
-.body .text-wrapper-6 {
-    position: relative;
-    align-self: stretch;
-    margin-top: -1px;
-    font-family: "Inter-Medium", Helvetica;
-    font-weight: 500;
-    color: #0ba02c;
     font-size: 20px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: 24px;
+    color: #0ba02c;
 }
-
-.body .text-wrapper-7 {
-    position: relative;
-    align-self: stretch;
-    font-family: var(--body-small-400-font-family);
-    font-weight: var(--body-small-400-font-weight);
-    color: #767f8c;
-    font-size: var(--body-small-400-font-size);
-    text-align: center;
-    letter-spacing: var(--body-small-400-letter-spacing);
-    line-height: var(--body-small-400-line-height);
-    font-style: var(--body-small-400-font-style);
-}
-
-.body .line {
-    position: relative;
-    align-self: stretch;
-    width: 2px;
-}
-
-.body .job-location {
+.salary {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    position: relative;
-    flex: 1;
-    flex-grow: 1;
+    gap: 12px;
 }
-
-.body .map-trifold {
+.salary-location-child {
+    align-self: stretch;
+    width: 2px;
     position: relative;
+    border-right: 2px solid #e7f0fa;
+    box-sizing: border-box;
+}
+.maptrifold-icon {
     width: 38px;
+    position: relative;
     height: 38px;
 }
-
-.body .job-location-2 {
+.kalinyamatan-jepara {
+    align-self: stretch;
+    position: relative;
+    line-height: 24px;
+    color: #767f8c;
+}
+.job-location1 {
+    align-self: stretch;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 2px;
-    width: 100%;
-    flex: 0 0 auto;
-    position: relative;
-    align-self: stretch;
 }
-
-.body .text-wrapper-8 {
-    position: relative;
-    align-self: stretch;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #767f8c;
-    font-size: 16px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: 24px;
-}
-
-.body .frame-5 {
+.job-location {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    gap: 20px;
-    position: relative;
-    align-self: stretch;
-    width: 100%;
-    flex: 0 0 auto;
+    gap: 8px;
 }
-
-.body .text-wrapper-9 {
-    position: relative;
+.salary-location {
     align-self: stretch;
-    margin-top: -1px;
-    font-family: var(--body-large-500-font-family);
-    font-weight: var(--body-large-500-font-weight);
-    color: #18191c;
-    font-size: var(--body-large-500-font-size);
-    text-align: center;
-    letter-spacing: var(--body-large-500-letter-spacing);
-    line-height: var(--body-large-500-line-height);
-    font-style: var(--body-large-500-font-style);
-}
-
-.body .frame-6 {
+    border-radius: 8px;
+    background-color: #fff;
+    border: 2px solid #e7f0fa;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 24px 24px;
-    position: relative;
-    align-self: stretch;
-    width: 100%;
-    flex: 0 0 auto;
-}
-
-.body .info {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 32px 12px;
     gap: 12px;
-    position: relative;
-    flex: 0 0 auto;
+    font-size: 16px;
 }
-
-.body .img {
+.job-overview {
+    align-self: stretch;
     position: relative;
+    line-height: 28px;
+    font-weight: 500;
+}
+.calendarblank-icon {
     width: 32px;
+    position: relative;
     height: 32px;
 }
-
-.body .heading {
-    display: inline-flex;
+.job-posted {
+    position: relative;
+    line-height: 18px;
+    text-transform: uppercase;
+}
+.jun-2021 {
+    position: relative;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #18191c;
+    text-align: left;
+}
+.heading1 {
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 4px;
-    position: relative;
-    flex: 0 0 auto;
 }
-
-.body .job-posted {
-    position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: var(--gray-500);
-    font-size: 12px;
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
     text-align: center;
-    letter-spacing: 0;
-    line-height: 18px;
-    white-space: nowrap;
 }
-
-.body .text-wrapper-10 {
+.info1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.briefcase-icon {
+    width: 32px;
     position: relative;
-    width: fit-content;
-    font-family: "Inter-Medium", Helvetica;
+    height: 32px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.smasmk {
+    position: relative;
+    font-size: 14px;
+    line-height: 20px;
     font-weight: 500;
     color: #18191c;
-    font-size: 14px;
-    letter-spacing: 0;
-    line-height: 20px;
-    white-space: nowrap;
 }
-
-.body .text-wrapper-11 {
-    position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: var(--gray-500);
+.info-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+.info-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 24px;
+    text-align: left;
     font-size: 12px;
-    letter-spacing: 0;
-    line-height: 18px;
-    white-space: nowrap;
+    color: #767f8c;
 }
-
-.body .info-wrapper {
-    display: inline-flex;
+.job-overview-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     gap: 20px;
-    position: relative;
-    flex: 0 0 auto;
 }
-
-.body .stack {
+.job-information-child {
+    align-self: stretch;
     position: relative;
-    width: 186px;
-    height: 198px;
-    margin-bottom: -112px;
-    margin-left: -55.5px;
-    margin-right: -55.5px;
+    border-top: 2px solid #e7f0fa;
+    box-sizing: border-box;
+    height: 2px;
+}
+.linksimple-icon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+}
+.copy-links {
+    position: relative;
+    line-height: 24px;
+    font-weight: 500;
+}
+.social-button {
+    border-radius: 4px;
+    background-color: #e7f0fa;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    gap: 6px;
+}
+.social-icon {
+    width: 20px;
+    position: relative;
+    height: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.social-button1 {
+    border-radius: 4px;
+    background-color: #e7f0fa;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.social-button2 {
+    border-radius: 4px;
+    background-color: #0a65cc;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.social-button4 {
+    border-radius: 4px;
+    background-color: #e7f0fa;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+.social-button-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 8px;
+    text-align: left;
+    font-size: 16px;
+    color: #0a65cc;
+}
+.share-this-job-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 32px;
+    gap: 8px;
+}
+.job-information {
+    width: 355px;
+    box-shadow: 0px 62px 80px rgba(10, 101, 204, 0.08),
+        0px 34.22384262084961px 24.12px rgba(10, 101, 204, 0.05),
+        0px 15.112289428710938px 10.02px rgba(10, 101, 204, 0.04),
+        0px 4.915308475494385px 3.62px rgba(10, 101, 204, 0.03);
+    border-radius: 8px;
+    background-color: #fff;
+    border: 2px solid #e7f0fa;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 32px 16px;
+    gap: 24px;
+    text-align: center;
+    font-size: 18px;
+}
+.frame-parent {
+    width: 1320px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content:center;
+    flex-wrap: wrap;
+    align-content:flex-start;
+    padding: 0px 16px 24px;
+    box-sizing: border-box;
+    gap: 56px 102px;
+    text-align: left;
+    font-size: 24px;
+    color: #18191c;
+    font-family: Inter;
+}
+.recruitmentdetail {
+    margin-top : 24px;
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 56px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    font-family: Montserrat;
 }
