@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landingpage');
 });
 
 Route::get('/dashboard', function () {
@@ -11,7 +11,7 @@ Route::get('/dashboard', function () {
 });
 
 Route::get('/recruitment', function () {  
-    return view('pages/recruitment/laman_rekrutment');  
+    return view('pages/recruitment/jobportal');  
 })->name('recruitment');
 
 Route::get('/recruitment/check', function () {  
@@ -21,6 +21,10 @@ Route::get('/recruitment/check', function () {
 Route::get('/recruitment/detail', function () {  
     return view('pages/recruitment/detail_loker');  
 })->name('detail_recruitment');
+
+Route::get('/recruitment/form', function () {  
+    return view('pages/recruitment/input_recruitment');  
+})->name('form_recruitment');
 
 Route::get('/payslip', function () {  
     return view('pages/payslip/payslip');  

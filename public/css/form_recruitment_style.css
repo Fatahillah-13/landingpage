@@ -1,0 +1,467 @@
+.form-pendaftaran {
+    position: relative;
+    line-height: 32px;
+}
+.i-data-diri {
+    align-self: stretch;
+    position: relative;
+    line-height: 32px;
+}
+.input-text-label {
+    align-self: stretch;
+    position: relative;
+    line-height: 18px;
+    font-weight: 600;
+}
+.type-here {
+    flex: 1;
+    position: relative;
+    line-height: 24px;
+}
+.icon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+    opacity: 0;
+}
+.text {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.input-field {
+    align-self: stretch;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 16px;
+    font-size: 16px;
+}
+.username {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.username-parent {
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 22px;
+}
+.text6 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.username6 {
+    width: 126px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.username-group {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 38px;
+}
+.dropdowns4 {
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.dropdowns-wrapper {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.frame-div {
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 18px;
+}
+.frame-container {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 36px;
+    font-size: 12px;
+    color: #666;
+    font-family: "Noto Sans";
+}
+.i-data-diri-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+}
+.image-1-icon {
+    align-self: stretch;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    height: max-content;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.image-1-wrapper {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.ambil-yang-bagian {
+    margin-bottom: 0px;
+}
+.ambil-yang-bagian-alamat-saja {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    padding-left: 16px;
+}
+.ambil-yang-bagian-container {
+    align-self: stretch;
+    position: relative;
+    line-height: 18px;
+}
+.type-here8 {
+    max-width: 945px;
+    min-width: 261px;
+    position: relative;
+    line-height: 24px;
+    display: inline-block;
+    flex-shrink: 0;
+}
+.frame-parent1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    font-size: 12px;
+    color: #666;
+    font-family: "Noto Sans";
+}
+.upload-foto {
+    align-self: stretch;
+    position: relative;
+    line-height: 18px;
+    font-weight: 600;
+    font-family: "Noto Sans";
+    color: #666;
+}
+.label-text {
+    position: relative;
+    text-decoration: underline;
+    letter-spacing: 0.5px;
+    line-height: 160%;
+}
+.drag-and-drop-field {
+    align-self: stretch;
+    border: 1px dashed #8e8e8e;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+    font-size: 14px;
+}
+.helper-text-optional {
+    align-self: stretch;
+    position: relative;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    line-height: 160%;
+    /* white-space: pre-wrap; */
+}
+.drag-and-drop-file-uploading {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.upload-icon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+}
+.helper-text-optional1 {
+    position: relative;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    line-height: 160%;
+}
+.helper-text-optional7 {
+    max-width: 290px;
+    align-self: stretch;
+    position: relative;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    line-height: 160%;
+}
+.drag-and-drop-file-uploading-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 32px;
+    font-size: 12px;
+    color: #8e8e8e;
+}
+.ii-upload-berkas-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 18px;
+}
+.frame-group {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 51px;
+    font-size: 20px;
+}
+.form-pendaftaran-parent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+    min-width: 296px;
+}
+.text16 {
+    width: 134px;
+    position: relative;
+    letter-spacing: 0.5px;
+    line-height: 160%;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button {
+    width: 100%;
+    border-radius: 4px;
+    background-color: #008f17;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+    max-width: 325px;
+    color: #fff;
+}
+.job-overview {
+    width: 106px;
+    position: relative;
+    line-height: 24px;
+    font-weight: 500;
+    display: inline-block;
+    flex-shrink: 0;
+}
+.job-overview-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+}
+.information {
+    align-self: stretch;
+    position: relative;
+    line-height: 28px;
+    font-weight: 500;
+}
+.calendarblank-icon {
+    width: 32px;
+    position: relative;
+    height: 32px;
+}
+.job-posted {
+    position: relative;
+    line-height: 18px;
+    text-transform: uppercase;
+}
+.jun-2021 {
+    position: relative;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #18191c;
+    text-align: left;
+}
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    text-align: center;
+}
+.info1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.briefcase-icon {
+    width: 32px;
+    position: relative;
+    height: 32px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.smasmk {
+    position: relative;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #18191c;
+}
+.info-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+.info-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 24px;
+    text-align: left;
+    font-size: 12px;
+    color: #767f8c;
+}
+.information-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    font-size: 18px;
+}
+.job-information {
+    width: 292px;
+    box-shadow: 0px 62px 80px rgba(10, 101, 204, 0.08),
+        0px 34.22384262084961px 24.12px rgba(10, 101, 204, 0.05),
+        0px 15.112289428710938px 10.02px rgba(10, 101, 204, 0.04),
+        0px 4.915308475494385px 3.62px rgba(10, 101, 204, 0.03);
+    border-radius: 8px;
+    background-color: #fff;
+    border: 2px solid #e7f0fa;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 16px 16px 32px;
+    gap: 24px;
+    text-align: center;
+    font-size: 14px;
+    color: #18191c;
+}
+.frame-parent {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 24px 24px;
+    box-sizing: border-box;
+    gap: 24px;
+    text-align: left;
+    font-size: 32px;
+    color: #008ecc;
+    font-family: Inter;
+}
+
+@media (max-width: 991px) {
+    .frame-container {
+        justify-content: center;
+    }
+    .frame-parent {
+        align-content: center;
+    }
+    .frame-parent1,
+    .ii-upload-berkas-parent {
+        padding: 0px 16px;
+    }
+    .label-text{
+        width: 250px;
+    }
+}

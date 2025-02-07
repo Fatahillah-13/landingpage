@@ -128,7 +128,7 @@
                 <div class="job-listings" aria-label="Job Listings">
                     <div class="row g-4 d-flex justify-content-center">
                         <div class="col-auto">
-                            <a href="{{ route('detail_recruitment') }}">
+                            <a href="{{ route('detail_recruitment') }}" target="_blank" style="text-decoration: none">
                                 <article class="job-card h-98">
                                     <div class="job-content">
                                         <div class="job-header">

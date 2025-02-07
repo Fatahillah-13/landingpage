@@ -1,62 +1,70 @@
-.group-child {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    border-radius: 10px;
-    background-color: #f3f9fb;
-    width: 507px;
-    height: 48px;
-}
-.rectangle-parent {
-    width: 507px;
-    position: relative;
-    height: 48px;
-}
-.frame-container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-.frame-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    text-align: left;
-    font-size: 16px;
-    color: #008ecc;
-}
-.image-15-parent {
-    align-self: stretch;
-    background-color: #f2f2f2;
-    height: 120px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 125px;
-}
 .logo-hwi-baru-web-1 {
     width: 157px;
     position: relative;
     height: 64px;
     object-fit: cover;
 }
+.logo-hwi-baru-web-1-wrapper {
+    width: 157px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 157px;
+}
 .ux-designer {
+    flex: 1;
     position: relative;
     line-height: 32px;
     font-weight: 500;
 }
+.heading {
+    width: 143px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
 .at-hrd-department {
+    min-width: 143px;
     position: relative;
-    font-size: 18px;
     line-height: 28px;
+}
+.at-hrd-department-wrapper {
+    min-width: 143px;
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 18px;
+    color: #474c54;
+}
+.heading-parent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    min-width: 141px;
+}
+.frame-div {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 24px;
+    min-width: 288px;
+    max-width: 470px;
 }
 .full-time {
     position: relative;
     line-height: 20px;
-    font-weight: 600;
+    font-weight: 500;
 }
 .full-time-wrapper {
     border-radius: 3px;
@@ -66,52 +74,55 @@
     align-items: flex-start;
     justify-content: flex-start;
     padding: 4px 12px;
-    color: #fff;
 }
 .featured {
-    color: #0ba02c;
     position: relative;
     line-height: 20px;
-    font-weight: 600;
+    color: #e05151;
 }
-.level-badge {
-    border-radius: 3px;
+.badge {
+    min-width: 55px;
+    min-height: 28px;
+    border-radius: 52px;
     background-color: #ffeded;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
     padding: 4px 12px;
-    color: #e05151;
 }
-.at-hrd-department-parent {
+.frame-parent1 {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     gap: 8px;
-    font-size: 14px;
-    color: #474c54;
 }
-.heading-parent {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 12px;
-}
-.logo-hwi-baru-web-1-parent {
+.frame-wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    gap: 24px;
+    font-size: 14px;
+    color: #fff;
+}
+.frame-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 6px 0px;
+    min-width: 288px;
+    max-width: 516px;
 }
 .primary {
     position: relative;
     line-height: 24px;
     text-transform: capitalize;
-    font-weight: 600;
+    font-weight: 500;
 }
 .fiarrow-right-icon {
     width: 24px;
@@ -121,8 +132,9 @@
     flex-shrink: 0;
 }
 .button {
-    width: 248px;
+    flex: 0.7419;
     border-radius: 4px;
+    border: none;
     background-color: #0a65cc;
     display: flex;
     flex-direction: row;
@@ -131,28 +143,32 @@
     padding: 16px 32px;
     box-sizing: border-box;
     gap: 12px;
+    min-width: 248px;
+    max-width: 248px;
     font-size: 16px;
     color: #fff;
 }
 .frame-group {
-    width: 1200px;
+    align-self: stretch;
     background-color: #fff;
-    height: 72px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     align-content: center;
+    padding: 0px 24px;
+    box-sizing: border-box;
+    min-width: 320px;
 }
 .job-description {
-    align-self: stretch;
     position: relative;
     font-size: 18px;
     line-height: 28px;
     font-weight: 500;
 }
 .velstar-is-a {
+    max-width: 943px;
     align-self: stretch;
     position: relative;
     line-height: 24px;
@@ -182,14 +198,35 @@
     gap: 8px;
 }
 .job-description-parent {
-    width: 753px;
-    background-color: #fff;
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 16px;
-    font-size: 16px;
+    z-index: 1;
+}
+.job-overview {
+    width: 106px;
+    position: relative;
+    line-height: 24px;
+    font-weight: 500;
+    display: inline-block;
+    flex-shrink: 0;
+}
+.job-overview-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.job-information-child {
+    align-self: stretch;
+    position: relative;
+    border-top: 2px solid #e7f0fa;
+    box-sizing: border-box;
+    height: 2px;
 }
 .monthly-salary {
     align-self: stretch;
@@ -259,15 +296,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 32px 12px;
+    padding: 8px 12px;
     gap: 12px;
     font-size: 16px;
-}
-.job-overview {
-    align-self: stretch;
-    position: relative;
-    line-height: 28px;
-    font-weight: 500;
 }
 .calendarblank-icon {
     width: 32px;
@@ -342,7 +373,7 @@
     font-size: 12px;
     color: #767f8c;
 }
-.job-overview-parent {
+.job-overview-group {
     align-self: stretch;
     display: flex;
     flex-direction: column;
@@ -350,12 +381,11 @@
     justify-content: center;
     gap: 20px;
 }
-.job-information-child {
+.share-this-job {
     align-self: stretch;
     position: relative;
-    border-top: 2px solid #e7f0fa;
-    box-sizing: border-box;
-    height: 2px;
+    line-height: 28px;
+    font-weight: 500;
 }
 .linksimple-icon {
     width: 24px;
@@ -437,8 +467,17 @@
     padding: 0px 32px;
     gap: 8px;
 }
+.salary-location-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 32px;
+    font-size: 18px;
+}
 .job-information {
-    width: 355px;
+    flex: 1;
     box-shadow: 0px 62px 80px rgba(10, 101, 204, 0.08),
         0px 34.22384262084961px 24.12px rgba(10, 101, 204, 0.05),
         0px 15.112289428710938px 10.02px rgba(10, 101, 204, 0.04),
@@ -446,44 +485,59 @@
     border-radius: 8px;
     background-color: #fff;
     border: 2px solid #e7f0fa;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     padding: 32px 16px;
     gap: 24px;
-    text-align: center;
-    font-size: 18px;
 }
-.frame-parent {
-    width: 1320px;
+.job-information-wrapper {
+    width: 320px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 17px;
+    box-sizing: border-box;
+    z-index: 0;
+    text-align: center;
+}
+.frame-parent2 {
+    align-self: stretch;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content:center;
+    justify-content: center;
     flex-wrap: wrap;
-    align-content:flex-start;
-    padding: 0px 16px 24px;
-    box-sizing: border-box;
-    gap: 56px 102px;
+    align-content: flex-start;
+    padding: 0px 24px;
+    gap: 32px;
+    font-size: 16px;
+}
+.frame-parent {
+    padding: 24px 0px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
     text-align: left;
     font-size: 24px;
     color: #18191c;
     font-family: Inter;
 }
-.recruitmentdetail {
-    margin-top : 24px;
-    width: 100%;
-    position: relative;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 56px;
-    text-align: center;
-    font-size: 14px;
-    color: #666;
-    font-family: Montserrat;
+@media (max-width: 991px) {
+    .frame-wrapper {
+        padding: 20px 0px;
+        padding-right: 20px;
+    }
+    .heading-parent {
+        padding-right: 20px;
+    }
+    .frame-container{
+        padding-right: 16px;
+    }
 }

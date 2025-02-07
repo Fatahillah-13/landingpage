@@ -18,7 +18,7 @@
 <body>
     {{-- Navigation Bar --}}
     <nav class="navbar">
-        <div class="container">
+        <div class="container" id="navbarContainer">
             <a class="navbar-brand" href="#">
                 <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="HWI" width="127" height="72">
             </a>
@@ -45,7 +45,7 @@
     {{-- Body --}}
     <div class="container mt-3 pb-3">
         {{-- Carousel --}}
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        {{-- <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="{{ asset('assets/carousel1.png') }}" class="d-block w-100" alt="...">
@@ -68,7 +68,29 @@
                 <div class="carousel-item">
                     <img src="{{ asset('assets/carousel7.jpg') }}" class="d-block w-100" alt="...">
                 </div>
-
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div> --}}
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{ asset('assets/carousel1.png') }}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('assets/carousel2.jpg') }}" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ asset('assets/carousel3.jpg') }}" class="d-block w-100" alt="...">
+                </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
                 data-bs-slide="prev">
@@ -97,22 +119,22 @@
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="service-item">
                         <div class="service-icon-wrapper">
-                            <img src="{{ asset('assets/bpjs_icon.png') }}" class="service-icon"
-                                alt="BPJS Check Service" width="32" height="32">
+                            <img src="{{ asset('assets/bpjs_icon.png') }}" class="service-icon" alt="BPJS Check Service"
+                                width="32" height="32">
                         </div>
                         <h3 class="service-title">Cek BPJS</h3>
                     </div>
                 </div>
                 <div class="col-6 col-md-4 col-lg-2">
-                    <a href="{{ route('recruitment') }}" style="text-decoration: none">
-                        <div class="service-item">
-                            <div class="service-icon-wrapper">
+                    <div class="service-item">
+                        <div class="service-icon-wrapper">
+                            <a href="{{ route('recruitment') }}" style="text-decoration: none">
                                 <img src="{{ asset('assets/career2_icon.png') }}" class="service-icon"
                                     alt="Career Service" width="32" height="32">
-                            </div>
-                            <h3 class="service-title">Career</h3>
+                            </a>
                         </div>
-                    </a>
+                        <h3 class="service-title">Career</h3>
+                    </div>
                 </div>
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="service-item">
@@ -132,7 +154,6 @@
                         <h3 class="service-title">Counseling</h3>
                     </div>
                 </div>
-
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="service-item">
                         <div class="service-icon-wrapper">
@@ -142,7 +163,6 @@
                         <h3 class="service-title">Cuti Online</h3>
                     </div>
                 </div>
-
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="service-item">
                         <div class="service-icon-wrapper">
@@ -152,29 +172,27 @@
                         <h3 class="service-title">Resign Online</h3>
                     </div>
                 </div>
-
                 <div class="col-6 col-md-4 col-lg-2">
-                    <a href="{{ route('check_recruitment') }}" style="text-decoration: none">
-                        <div class="service-item">
-                            <div class="service-icon-wrapper">
+                    <div class="service-item">
+                        <div class="service-icon-wrapper">
+                            <a href="{{ route('check_recruitment') }}" style="text-decoration: none">
                                 <img src="{{ asset('assets/check_lamaran_icon.png') }}" class="service-icon"
                                     alt="Online Resignation Service" width="32" height="32">
-                            </div>
-                            <h3 class="service-title">Cek Lamaran</h3>
+                            </a>
                         </div>
-                    </a>
+                        <h3 class="service-title">Cek Lamaran</h3>
+                    </div>
                 </div>
-
                 <div class="col-6 col-md-4 col-lg-2">
-                    <a href="{{ route('e_payslip') }}" style="text-decoration: none">
-                        <div class="service-item">
-                            <div class="service-icon-wrapper">
+                    <div class="service-item">
+                        <div class="service-icon-wrapper">
+                            <a href="{{ route('e_payslip') }}" style="text-decoration: none">
                                 <img src="{{ asset('assets/payslip.png') }}" class="service-icon"
                                     alt="Online Resignation Service" width="32" height="32">
-                            </div>
-                            <h3 class="service-title">Payslip</h3>
+                            </a>
                         </div>
-                    </a>
+                        <h3 class="service-title">Payslip</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -215,97 +233,6 @@
                         </article>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <article class="job-card h-98">
-                            <div class="job-content">
-                                <div class="job-header">
-                                    <div class="logo-wrapper">
-                                        <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="Company logo"
-                                            class="company-logo">
-                                    </div>
-                                    <h2 class="job-title">Admin<br>Social Media</h2>
-                                    <div class="divider-job" aria-hidden="true"></div>
-                                </div>
-                                <div class="job-details">
-                                    <div class="d-flex flex-wrap">
-                                        <span class="tag">Fulltime</span>
-                                        <span class="tag">Min. S1</span>
-                                        <span class="tag">Ms. Excel</span>
-                                        <span class="tag">Freshgraduate</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <article class="job-card h-98">
-                            <div class="job-content">
-                                <div class="job-header">
-                                    <div class="logo-wrapper">
-                                        <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="Company logo"
-                                            class="company-logo">
-                                    </div>
-                                    <h2 class="job-title">Admin<br>Social Media</h2>
-                                    <div class="divider-job" aria-hidden="true"></div>
-                                </div>
-                                <div class="job-details">
-                                    <div class="d-flex flex-wrap">
-                                        <span class="tag">Fulltime</span>
-                                        <span class="tag">Min. S1</span>
-                                        <span class="tag">Ms. Excel</span>
-                                        <span class="tag">Freshgraduate</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <article class="job-card h-98">
-                            <div class="job-content">
-                                <div class="job-header">
-                                    <div class="logo-wrapper">
-                                        <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="Company logo"
-                                            class="company-logo">
-                                    </div>
-                                    <h2 class="job-title">Admin<br>Social Media</h2>
-                                    <div class="divider-job" aria-hidden="true"></div>
-                                </div>
-                                <div class="job-details">
-                                    <div class="d-flex flex-wrap">
-                                        <span class="tag">Fulltime</span>
-                                        <span class="tag">Min. S1</span>
-                                        <span class="tag">Ms. Excel</span>
-                                        <span class="tag">Freshgraduate</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <article class="job-card h-98">
-                            <div class="job-content">
-                                <div class="job-header">
-                                    <div class="logo-wrapper">
-                                        <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="Company logo"
-                                            class="company-logo">
-                                    </div>
-                                    <h2 class="job-title">Admin<br>Social Media</h2>
-                                    <div class="divider-job" aria-hidden="true"></div>
-                                </div>
-                                <div class="job-details">
-                                    <div class="d-flex flex-wrap">
-                                        <span class="tag">Fulltime</span>
-                                        <span class="tag">Min. S1</span>
-                                        <span class="tag">Ms. Excel</span>
-                                        <span class="tag">Freshgraduate</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
                 </div>
             </section>
         </div>
@@ -325,14 +252,8 @@
                             </div>
                             <div class="col-lg-4">
                                 <div class="search-content">
-                                    <button class="search-link btn btn-link p-0 border-0" aria-label="Search news">
-                                        <span class="search-text">telusuri</span>
-                                        <img src="https://cdn.builder.io/api/v1/image/assets/ac6b6ea4d2d54dc49c08994396456689/a7d7f18946fff3fc68ca60b3dc283f9b7756dd8a25da815edb415246507a95be?apiKey=ac6b6ea4d2d54dc49c08994396456689&"
-                                            width="20" height="20" alt="" aria-hidden="true"
-                                            class="search-icon">
-                                    </button>
-                                    <img src="https://cdn.builder.io/api/v1/image/assets/ac6b6ea4d2d54dc49c08994396456689/0866745516c4dd2fc73f7849f88125adfa5174e67511e0d2646f24021121d613?apiKey=ac6b6ea4d2d54dc49c08994396456689&"
-                                        width="127" height="72" alt="HWI Logo" class="mt-4">
+                                    <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" width="127"
+                                        height="72" alt="HWI Logo" class="mt-4">
                                 </div>
                             </div>
                         </div>
@@ -376,16 +297,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 mt-3">
                     <div class="row">
                         <div class="col-md-6">
                             <form action="">
                                 <div class="form-group mb-3">
                                     <label for="firstName">First Name</label>
                                     <input type="text" class="form-control" id="firstName"
-                                        placeholder="Enter your first name">
+                                        placeholder="Enter your first name" style="outline: none">
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group mb-3">
                                     <label for="email">Email</label>
                                     <input type="email" class="form-control" id="email"
                                         placeholder="Enter your email">
@@ -395,14 +316,8 @@
                         <div class="col-md-6">
                             <form action="">
                                 <div class="form-group mb-3">
-                                    <label for="lastName">Last Name</label>
-                                    <input type="text" class="form-control" id="lastName" value="Doe"
-                                        readonly>
-                                </div>
-                                <div class="form-group mb-3">
                                     <label for="phone">Phone Number</label>
-                                    <input type="text" class="form-control" id="phone" value="+012 3456 789"
-                                        readonly>
+                                    <input type="text" class="form-control" id="phone">
                                 </div>
                             </form>
                         </div>
@@ -446,7 +361,7 @@
     {{-- Footer --}}
     <div class="footer text-center mt-3 pb-2">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#" id="navbarContainer">
                 <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="HWI" width="127"
                     height="72">
             </a>

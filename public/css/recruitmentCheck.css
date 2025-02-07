@@ -1,0 +1,41 @@
+#tabelContainer {
+    max-width: 100%; /* Pastikan kontainer tidak melebihi lebar layar */
+    overflow-x: auto; /* Tambahkan scroll horizontal jika diperlukan */
+    padding: 10px; /* Tambahkan padding untuk estetika */
+}
+
+#tabel-hasil {
+    width: 100%; /* Pastikan tabel mengambil lebar penuh dari kontainer */
+    border-collapse: collapse; /* Menghilangkan jarak antara border sel */
+}
+
+#tabel-hasil th,
+#tabel-hasil td {
+    padding: 10px; /* Memberikan padding pada sel */
+    text-align: left; /* Mengatur teks ke kiri */
+    border: 1px solid #ddd; /* Menambahkan border pada sel */
+}
+
+@media (max-width: 991px) {
+    #progressinfo {
+        margin: 0 0px;
+        border: none;
+    }
+    #stepper {
+        text-align: center;
+    }
+    #arrow-stepper-steps {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    #tabelContainer {
+        padding: 5px; /* Mengurangi padding pada layar kecil */
+    }
+
+    #tabel-hasil th,
+    #tabel-hasil td {
+        font-size: 14px; /* Mengurangi ukuran font untuk layar kecil */
+    }
+}

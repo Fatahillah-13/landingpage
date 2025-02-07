@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/recruitment_style.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/recruitment_style.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('css/recruitmentCheck.css') }}">
     <link rel="stylesheet" href="{{ asset('css/stepper_style.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/mdb-ui-kit@8.1.0/css/mdb.min.css" rel="stylesheet" />
@@ -19,8 +19,8 @@
 
 <body>
     {{-- Navigation Bar --}}
-    <nav class="navbar">
-        <div class="container">
+    <nav class="navbar" id="navbar">
+        <div class="container" id="navbarContainer">
             <a class="navbar-brand" href="#">
                 <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="HWI" width="127" height="72">
             </a>
@@ -69,11 +69,11 @@
         </div>
         {{-- End Search Bar --}}
         {{-- Progress Bar --}}
-        <div class="container mt-4 card" style="max-width: 1200px">
+        <div class="container mt-4 card" id="progressinfo" style="max-width: 1200px">
             <div class="card-body">
                 {{-- Stepper --}}
-                <div class="container mt-4 mb-4">
-                    <div class="arrow-stepper-steps">
+                <div class="container mt-4 mb-4" id="stepper">
+                    <div class="arrow-stepper-steps" id="arrow-stepper-steps">
                         <div class="atoms-arrow-stepper">
                             <div class="overlap-group-wrapper">
                                 <div class="overlap-group d-flex align-items-center">
@@ -126,44 +126,78 @@
                 </div>
                 {{-- End of Stepper --}}
                 {{-- Tabel --}}
-                <div class="container">
-                    <div class="tbl-hasil">
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <th>Nama Lengkap</th>
-                                    <td>: &nbsp; ADAADAWDADAWD</td>
-                                </tr>
-                                <tr>
-                                    <th>NIK</th>
-                                    <td>: &nbsp; 3319728692027791</td>
-                                </tr>
-                                <tr>
-                                    <th>Alamat</th>
-                                    <td>: &nbsp; SKEKAI RT 2/ 2, SIRUKAM, PAYUNG SEKAKI, KABUPATEN SOLOK </td>
-                                </tr>
-                                <tr>
-                                    <th>Posisi</th>
-                                    <td>: &nbsp; Social Media Admin </td>
-                                </tr>
-                                <tr>
-                                    <th>Level</th>
-                                    <td>: &nbsp; Staff </td>
-                                </tr>
-                                <tr>
-                                    <th>Tanggal Pendaftaran</th>
-                                    <td>: &nbsp; 22-01-2025 </td>
-                                </tr>
-                                <tr>
-                                    <th>Berkas Pendaftaran</th>
-                                    <td>: &nbsp; <a href="#" data-bs-toggle="modal"
-                                            data-bs-target="#info_berkas_daftar"
-                                            style="text-decoration:none">berkas_daftar_3319728692027791</a> </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="container" id="tabelContainer">
+                    <table class="container table" id="tabel-hasil">
+                        <tbody>
+                            <tr>
+                                <th>Nama Lengkap</th>
+                                <td>: &nbsp; ADAADAWDADAWD</td>
+                            </tr>
+                            <tr>
+                                <th>NIK</th>
+                                <td>: &nbsp; 3319728692027791</td>
+                            </tr>
+                            <tr>
+                                <th>Alamat</th>
+                                <td>: &nbsp; SKEKAI RT 2/ 2, SIRUKAM, PAYUNG SEKAKI, KABUPATEN SOLOK </td>
+                            </tr>
+                            <tr>
+                                <th>Posisi</th>
+                                <td>: &nbsp; Social Media Admin </td>
+                            </tr>
+                            <tr>
+                                <th>Level</th>
+                                <td>: &nbsp; Staff </td>
+                            </tr>
+                            <tr>
+                                <th>Tanggal Pendaftaran</th>
+                                <td>: &nbsp; 22-01-2025 </td>
+                            </tr>
+                            <tr>
+                                <th>Berkas Pendaftaran</th>
+                                <td>: &nbsp; <a href="#" data-bs-toggle="modal"
+                                        data-bs-target="#info_berkas_daftar"
+                                        style="text-decoration:none">berkas_daftar_3319728692027791</a> </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+                {{-- <div class="container" id="tabelCo">
+                    <table class="table" id="tabel-hasil">
+                        <tbody>
+                            <tr>
+                                <th>Nama Lengkap</th>
+                                <td>: &nbsp; ADAADAWDADAWD</td>
+                            </tr>
+                            <tr>
+                                <th>NIK</th>
+                                <td>: &nbsp; 3319728692027791</td>
+                            </tr>
+                            <tr>
+                                <th>Alamat</th>
+                                <td>: &nbsp; SKEKAI RT 2/ 2, SIRUKAM, PAYUNG SEKAKI, KABUPATEN SOLOK </td>
+                            </tr>
+                            <tr>
+                                <th>Posisi</th>
+                                <td>: &nbsp; Social Media Admin </td>
+                            </tr>
+                            <tr>
+                                <th>Level</th>
+                                <td>: &nbsp; Staff </td>
+                            </tr>
+                            <tr>
+                                <th>Tanggal Pendaftaran</th>
+                                <td>: &nbsp; 22-01-2025 </td>
+                            </tr>
+                            <tr>
+                                <th>Berkas Pendaftaran</th>
+                                <td>: &nbsp; <a href="#" data-bs-toggle="modal"
+                                        data-bs-target="#info_berkas_daftar"
+                                        style="text-decoration:none">berkas_daftar_3319728692027791</a> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> --}}
                 {{-- End of Tabel --}}
                 {{-- Scrollable modal --}}
                 <div class="modal fade" id="info_berkas_daftar" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -184,8 +218,7 @@
                                 <p>This content should appear at the bottom after you scroll.</p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-danger"
-                                    data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -199,7 +232,7 @@
     {{-- Footer --}}
     <div class="footer text-center mt-3 pb-2">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" id="container-footer" href="#">
                 <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="HWI" width="127" height="72">
             </a>
             <p class="pt-2">© 2024 All rights reserved. PT Hwaseung Indonesia - Jepara</p>
