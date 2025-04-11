@@ -147,10 +147,12 @@
                 </div>
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="service-item">
-                        <div class="service-icon-wrapper">
-                            <img src="{{ asset('assets/counseling_icon.png') }}" class="service-icon"
-                                alt="Counseling Service" width="32" height="32">
-                        </div>
+                        <a href="{{ route('counseling') }}" style="text-decoration: none">
+                            <div class="service-icon-wrapper">
+                                <img src="{{ asset('assets/counseling_icon.png') }}" class="service-icon"
+                                    alt="Counseling Service" width="32" height="32">
+                            </div>
+                        </a>
                         <h3 class="service-title">Counseling</h3>
                     </div>
                 </div>

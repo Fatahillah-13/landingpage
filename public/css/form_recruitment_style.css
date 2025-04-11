@@ -33,17 +33,19 @@
     align-items: flex-start;
     justify-content: space-between;
 }
-.input-field {
+.input-field,
+.input-field-select {
     align-self: stretch;
     border-radius: 8px;
     background-color: #fff;
     border: 1px solid #ccc;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     padding: 16px;
     font-size: 16px;
+    min-height: 58px;
 }
 .username {
     align-self: stretch;
@@ -461,7 +463,7 @@
     .ii-upload-berkas-parent {
         padding: 0px 16px;
     }
-    .label-text{
+    .label-text {
         width: 250px;
     }
 }
