@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CounselingController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\RegionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -32,4 +34,13 @@ Route::get('/payslip', function () {
 })->name('e_payslip');
 
 Route::get('/counseling', [CounselingController::class, 'index'])->name('counseling');
-Route::post('/konseling', [CounselingController::class, 'store']);
+Route::post('/counseling/store', [CounselingController::class, 'store'])->name('counseling.store');
+
+Route::get('/updateData', function () {
+    return view('pages/updateData/form');
+})->name('e_payslip');
+
+Route::get('/form-karyawan', [EmployeeController::class, 'create']);
+Route::post('/form-karyawan', [EmployeeController::class, 'store'])->name('form-karyawan.store');
+Route::get('/get-wilayah', [EmployeeController::class, 'selectedWilayah']);
+

@@ -89,22 +89,17 @@
 
         /* Emoji button colors */
         .emoji-tersedia {
-            background-color: #5772dd;
+            background-color: #E5F4F2;
             color: #27AE60;
         }
 
         .emoji-dipilih {
-            background-color: #E5F4F2;
+            background-color: #4160DF;
             color: #fff;
         }
 
         .emoji-tidak-tersedia {
             background-color: #C0392B;
-            color: #fff;
-        }
-
-        .emoji-istirahat {
-            background-color: #ffffff;
             color: #fff;
         }
 
@@ -149,90 +144,7 @@
                 padding: 12px;
             }
         }
-
-        .badge {
-            transition: all 0.3s ease;
-            opacity: 0.8;
-        }
-
-        .jadwal-card.bg-primary .badge {
-            opacity: 1;
-        }
-
-        .jadwal-card {
-            cursor: pointer;
-        }
-
-        .jadwal-card[data-status="Tidak Tersedia"] {
-            cursor: not-allowed;
-            opacity: 0.8;
-        }
     </style>
-    <style>
-        .card {
-            border-radius: 1rem;
-        }
-
-        .card .form-label {
-            font-weight: 500;
-            color: #4A5568;
-        }
-
-        .form-control,
-        .form-select,
-        textarea {
-            border-radius: 12px;
-            padding: 0.75rem 1rem;
-            font-size: 0.95rem;
-            color: #2D3748;
-            border: 1px solid #CBD5E0;
-        }
-
-        .form-control::placeholder,
-        textarea::placeholder {
-            color: #A0AEC0;
-            font-size: 0.9rem;
-        }
-
-        .form-check-input {
-            width: 1.1rem;
-            height: 1.1rem;
-            margin-top: 0.2rem;
-            accent-color: #7D5FFF;
-        }
-
-        .form-check-label {
-            font-weight: 500;
-            color: #2D3748;
-            margin-left: 0.3rem;
-        }
-
-        .btn-primary {
-            background-color: #7D5FFF;
-            border: none;
-            border-radius: 12px;
-            padding: 0.75rem;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #6C47FF;
-        }
-
-        small.text-muted {
-            font-size: 0.75rem;
-        }
-
-        /* Optional: responsive tweaks */
-        @media (max-width: 768px) {
-            .card {
-                padding: 1.5rem;
-            }
-        }
-    </style>
-
 </head>
 
 <body>
@@ -267,6 +179,10 @@
         <div class="row">
             {{-- Bagian Kiri: Jadwal --}}
             <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-label">Tanggal Konsultasi</label>
+                    <input type="date" class="form-control" name="tanggal">
+                </div>
                 @foreach ($jadwal as $item)
                     @if (isset($item['istirahat']) && $item['istirahat'] === true)
                         <div class="bg-light rounded p-3 mb-3 d-flex align-items-center justify-content-center">
@@ -280,7 +196,6 @@
                             $emojiIcon = '😊';
                             $emojiClass = 'emoji-tersedia';
                             $disabled = '';
-                            $showOfflineOnline = true;
 
                             if ($item['status'] === 'Dipilih') {
                                 $bgColor = 'bg-primary text-white';
@@ -293,29 +208,18 @@
                                 $textColor = 'text-white';
                                 $badge = '<span class="badge bg-light text-danger">Tidak Tersedia</span>';
                                 $emojiClass = 'emoji-tidak-tersedia';
-                                $emojiIcon = '❌';
+                                $emojiIcon = '😐';
                                 $disabled = 'disabled';
-                            } elseif ($item['status'] === 'Istirahat') {
-                                $bgColor = 'bg-light';
-                                $textColor = 'text-dark';
-                                $badge = '<span class="badge text-warning">Istirahat</span>';
-                                $emojiClass = 'emoji-istirahat';
-                                $emojiIcon = '🍽️';
-                                $disabled = 'disabled';
-                                $showOfflineOnline = false;
                             }
                         @endphp
-
-                        <div class="card mb-3 {{ $bgColor }} jadwal-card" data-waktu="{{ $item['waktu'] }}"
+                        <div class="card mb-3 {{ $bgColor }} jadwal-card" data-waktu="{{ $item['$consul_date'] }}"
                             data-status="{{ $item['status'] }}">
                             <div class="card-body d-flex justify-content-between align-items-center">
                                 <div>
-                                    <small class="{{ $textColor }}">Senin, 07 April 2025</small>
-                                    <h5 class="mb-1 {{ $textColor }}">{{ $item['waktu'] }} WIB</h5>
+                                    <small class="{{ $textColor }}">{{ \Carbon\Carbon::parse($item['consul_date'])->translatedFormat('l, d F Y') }}</small>
+                                    <h5 class="mb-1 {{ $textColor }}">{{ \Carbon\Carbon::parse($item['consul_date'])->format('H:i') }} WIB</h5>
                                     {!! $badge !!}
-                                    @if ($showOfflineOnline)
-                                        <small class="d-block d-md-inline {{ $textColor }}">Offline / Online</small>
-                                    @endif
+                                    <small class="d-block d-md-inline {{ $textColor }}">Offline / Online</small>
                                 </div>
                                 <div>
                                     <button type="button" class="emoji-btn {{ $emojiClass }}"
@@ -332,17 +236,13 @@
             {{-- Bagian Kanan: Form --}}
             <div class="col-md-6">
                 <div class="card p-4 shadow-sm" style="gap: 1rem;">
-                    <small class="text-muted d-block mb-1">Senin, 7 April 2025</small>
-                    <h4 class="text-primary fw-bold mb-3" id="timeCheck">Silahkan Pilih Waktu Konsul</h4>
+                    <small
+                        class="text-muted d-block mb-1">{{ \Carbon\Carbon::parse($today)->translatedFormat('l, d F Y') }}</small>
+                    <h4 class="text-primary fw-bold mb-3">09.00 - 10.00 WIB</h4>
 
                     <form action="" method="POST" onsubmit="return checkSelectedCard()">
                         @csrf
                         <input type="hidden" name="jadwal_terpilih" id="jadwal_terpilih">
-                        <div class="mb-3">
-                            <label class="form-label">Tanggal Konsultasi</label>
-                            <input type="date" class="form-control" name="tanggal">
-                        </div>
-
                         <div class="mb-3">
                             <label class="form-label">Nama Lengkap</label>
                             <input type="text" class="form-control" name="nama">
@@ -423,20 +323,6 @@
     integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
 </script>
 <script>
-    const cards = document.querySelectorAll('.jadwal-card');
-    const inputJadwal = document.getElementById('jadwal_terpilih');
-    const timeCheck = document.getElementById('timeCheck');
-
-    cards.forEach(card => {
-        if (card.dataset.status !== 'Tidak Tersedia' && card.dataset.status !== 'Istirahat') {
-            card.addEventListener('click', () => {
-                inputJadwal.value = card.dataset.waktu;
-                timeCheck.textContent = card.dataset.waktu;
-
-            });
-        }
-    });
-
     function checkSelectedCard() {
         const selected = document.getElementById('jadwal_terpilih').value;
         if (!selected) {
@@ -478,13 +364,6 @@
 
                         // Reset data-status
                         c.setAttribute('data-status', 'Tersedia');
-
-                        const emojiBtn = c.querySelector('.emoji-btn');
-                        emojiBtn.classList.remove('emoji-dipilih',
-                            'emoji-tidak-tersedia');
-                        emojiBtn.classList.add('emoji-tersedia');
-                        emojiBtn.innerText = '😊';
-
                     }
                 });
 
@@ -513,13 +392,6 @@
 
                 // Simpan data waktu ke input tersembunyi
                 inputJadwal.value = this.getAttribute('data-waktu');
-
-                // Update emoji saat dipilih
-                const emojiBtn = this.querySelector('.emoji-btn');
-                emojiBtn.innerText = '✔';
-                emojiBtn.classList.remove('emoji-tersedia', 'emoji-tidak-tersedia');
-                emojiBtn.classList.add('emoji-dipilih');
-
             });
         });
     });

@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('konsultasi', function (Blueprint $table) {
             $table->id();
+            $table->string('nik');
+            $table->string('name');
+            $table->string('phone');
+            $table->string('level');
+            $table->string('consul_type');
+            $table->string('department');
+            $table->datetime('consul_date');
+            $table->string('description');
             $table->timestamps();
         });
     }
