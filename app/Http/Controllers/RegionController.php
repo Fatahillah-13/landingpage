@@ -2,24 +2,41 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cities;
+use App\Models\District;
+use App\Models\Province;
+use App\Models\Village;
 use App\Models\Wilayah;
 use Illuminate\Http\Request;
 
 class RegionController extends Controller
 {
 
-    // public function getWilayah(Request $request)
-    // {
-    //     $kode = $request->kode;
+    public function provinsi()
+    {
+        $data = Province::where('name', 'LIKE', '%' . request('q') . '%')->paginate(0);
 
-    //     // Menentukan panjang kode selanjutnya
-    //     $panjang = strlen($kode) + ($kode ? 3 : 2); // 2->Prov, 5->Kab, 8->Kec, 13->Kel
+        return response()->json($data);
+    }
 
-    //     $data = Wilayah::where('kode', 'like', $kode . '%')
-    //         ->whereRaw('CHAR_LENGTH(kode) = ' . $panjang)
-    //         ->orderBy('nama')
-    //         ->get();
+    public function cities($id)
+    {
+        $data = Cities::where('province_code', $id)->where('name', 'LIKE', '%' . request('q') . '%')->paginate(20);
 
-    //     return response()->json($data);
-    // }
+        return response()->json($data);
+    }
+
+    public function district($id)
+    {
+        $data = District::where('city_code', $id)->where('name', 'LIKE', '%' . request('q') . '%')->paginate(20);
+
+        return response()->json($data);
+    }
+
+    public function village($id)
+    {
+        $data = Village::where('district_code', $id)->where('name', 'LIKE', '%' . request('q') . '%')->paginate(20);
+
+        return response()->json($data);
+    }
 }

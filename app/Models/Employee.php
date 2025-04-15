@@ -36,23 +36,44 @@ class Employee extends Model
     ];
 
     // Relasi ke Wilayah untuk setiap level
-    public function provinsiWilayah()
+    // public function provinsiWilayah()
+    // {
+    //     return $this->hasOne(Wilayah::class, 'kode', 'provinsi');
+    // }
+
+    // public function kotaWilayah()
+    // {
+    //     return $this->hasOne(Wilayah::class, 'kode', 'kota');
+    // }
+
+    // public function kecamatanWilayah()
+    // {
+    //     return $this->hasOne(Wilayah::class, 'kode', 'kecamatan');
+    // }
+
+    // public function kelurahanWilayah()
+    // {
+    //     return $this->hasOne(Wilayah::class, 'kode', 'kelurahan');
+    // }
+
+    // Relasi ke wilayah
+    public function province()
     {
-        return $this->hasOne(Wilayah::class, 'kode', 'provinsi');
+        return $this->belongsTo(Province::class);
     }
 
-    public function kotaWilayah()
+    public function cities()
     {
-        return $this->hasOne(Wilayah::class, 'kode', 'kota');
+        return $this->belongsTo(Cities::class);
     }
 
-    public function kecamatanWilayah()
+    public function district()
     {
-        return $this->hasOne(Wilayah::class, 'kode', 'kecamatan');
+        return $this->belongsTo(District::class);
     }
 
-    public function kelurahanWilayah()
+    public function village()
     {
-        return $this->hasOne(Wilayah::class, 'kode', 'kelurahan');
+        return $this->belongsTo(Village::class);
     }
 }

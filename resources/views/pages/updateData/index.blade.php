@@ -77,8 +77,7 @@
                             <th class="px-4 py-2 font-semibold text-gray-700">Status Pernikahan</th>
                             <th class="px-4 py-2 font-semibold text-gray-700">Nama Pasangan</th>
                             <th class="px-4 py-2 font-semibold text-gray-700">Jumlah Anak</th>
-                            <th class="px-4 py-2 font-semibold text-gray-700">Nama Anak</th>
-                            <th class="px-4 py-2 font-semibold text-gray-700">Tanggal Lahir Anak</th>
+                            <th class="px-4 py-2 font-semibold text-gray-700">Anak</th>
                             <th class="px-4 py-2 font-semibold text-gray-700">Alamat KTP</th>
                             <th class="px-4 py-2 font-semibold text-gray-700">Provinsi</th>
                             <th class="px-4 py-2 font-semibold text-gray-700">Kota</th>
@@ -89,14 +88,14 @@
                     <tbody class="divide-y divide-gray-100">
                         @foreach ($employees as $employee)
                             <tr class="hover:bg-gray-50 transition">
-                                <td class="px-4 py-2">{{ $employee->nik_karyawan }}</td>
-                                <td class="px-4 py-2">{{ $employee->nama_lengkap }}</td>
-                                <td class="px-4 py-2">{{ $employee->no_hp }}</td>
-                                <td class="px-4 py-2">{{ $employee->status_pernikahan }}</td>
-                                <td class="px-4 py-2">{{ $employee->nama_pasangan ?? '-' }}</td>
-                                <td class="px-4 py-2">{{ $employee->jumlah_anak }}</td>
+                                <td class="px-4 py-2">{{ $employee->number_of_employees }}</td>
+                                <td class="px-4 py-2">{{ $employee->name }}</td>
+                                <td class="px-4 py-2">{{ $employee->phone }}</td>
+                                <td class="px-4 py-2">{{ $employee->marital_status }}</td>
+                                <td class="px-4 py-2">{{ $employee->spouse_name ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $employee->number_of_children }}</td>
                                 <td class="px-4 py-2">
-                                    @php $anak = json_decode($employee->anak_json, true); @endphp
+                                    @php $anak = json_decode($employee->children_json, true); @endphp
                                     @if (!empty($anak))
                                         <ul class="list-disc list-inside">
                                             @foreach ($anak as $a)
@@ -109,25 +108,11 @@
                                         <em>-</em>
                                     @endif
                                 </td>
-                                <td class="px-4 py-2">
-                                    @php $anak = json_decode($employee->anak_json, true); @endphp
-                                    @if (!empty($anak))
-                                        <ul class="list-disc list-inside">
-                                            @foreach ($anak as $a)
-                                                <li>
-                                                    ({{ \Carbon\Carbon::parse($a['tanggal_lahir'])->translatedFormat('d F Y') }})
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    @else
-                                        <em>-</em>
-                                    @endif
-                                </td>
-                                <td class="px-4 py-2">{{ $employee->alamat_ktp }}</td>
-                                <td class="px-4 py-2">{{ $employee->provinsiWilayah->nama ?? '-' }}</td>
-                                <td class="px-4 py-2">{{ $employee->kotaWilayah->nama ?? '-' }}</td>
-                                <td class="px-4 py-2">{{ $employee->kecamatanWilayah->nama ?? '-' }}</td>
-                                <td class="px-4 py-2">{{ $employee->kelurahanWilayah->nama ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $employee->address }}</td>
+                                <td class="px-4 py-2">{{ $employee->address_province ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $employee->address_city ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $employee->address_district ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $employee->address_village ?? '-' }}</td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -140,8 +125,7 @@
     <div class="footer text-center mt-3 pb-2">
         <div class="container">
             <a class="navbar-brand" id="container-footer" href="#">
-                <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="HWI" width="127"
-                    height="72">
+                <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="HWI" width="127" height="72">
             </a>
             <p class="pt-2">© 2024 All rights reserved. PT Hwaseung Indonesia - Jepara</p>
         </div>

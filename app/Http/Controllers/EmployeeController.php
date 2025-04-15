@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cities;
+use App\Models\District;
 use App\Models\Wilayah;
 use App\Models\employee;
 use App\Models\Employee as ModelsEmployee;
+use App\Models\Province;
+use App\Models\Village;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
     public function index()
     {
-        $employees = Employee::with(['provinsiWilayah', 'kotaWilayah', 'kecamatanWilayah', 'kelurahanWilayah'])->get();
+        $employees = Employee::with(['province', 'cities', 'district', 'village'])->get();
 
         return view('pages.updateData.index', compact('employees'));
     }
@@ -50,6 +54,13 @@ class EmployeeController extends Controller
         $request->merge([
             'rt' => (string) $request->rt,
             'rw' => (string) $request->rw,
+        ]);
+
+        $request->merge([
+            'provinsi' => Province::where('code', $request->provinsi)->value('name'),
+            'kota' => Cities::where('code', $request->kota)->value('name'),
+            'kecamatan' => District::where('code', $request->kecamatan)->value('name'),
+            'kelurahan' => Village::where('code', $request->kelurahan)->value('name'),
         ]);
 
         $request->validate([

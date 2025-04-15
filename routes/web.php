@@ -45,4 +45,7 @@ Route::post('/form-karyawan', [EmployeeController::class, 'store'])->name('form-
 Route::get('/get-wilayah', [EmployeeController::class, 'selectedWilayah']);
 Route::get('/get-data-karyawan', [EmployeeController::class, 'index'])->name('karyawan.index');
 
-
+Route::get('selectProv', [RegionController::class, 'provinsi'])->name('provinsi.index');
+Route::get('selectRegenc/{id}', [RegionController::class, 'cities'])->name('cities.index');
+Route::get('selectDistrict/{id}', [RegionController::class, 'district'])->name('district.index');
+Route::get('selectVillage/{id}', [RegionController::class, 'village'])->name('village.index');

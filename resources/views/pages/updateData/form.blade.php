@@ -96,9 +96,9 @@
                     <select id="provinsi" name="provinsi"
                         class="input-field-select w-full border border-gray-300 rounded-md px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-purple-500">
                         <option value="">Pilih Provinsi</option>
-                        @foreach ($provinsi as $item)
+                        {{-- @foreach ($provinsi as $item)
                             <option value="{{ $item->kode }}">{{ $item->nama }}</option>
-                        @endforeach
+                        @endforeach --}}
                     </select>
                 </div>
                 <div class="space-y-1">
@@ -137,8 +137,8 @@
                 {{-- <x-input label="Kelurahan / Desa*" name="kelurahan" /> --}}
 
                 <div class="flex gap-2">
-                    <x-input label="RT*" name="rt" type="number"/>
-                    <x-input label="RW*" name="rw" type="number"/>
+                    <x-input label="RT*" name="rt" type="number" />
+                    <x-input label="RW*" name="rw" type="number" />
                 </div>
 
                 {{-- III. Survey Tempat Tinggal --}}
@@ -229,36 +229,36 @@
             height: 'resolve',
         });
 
-        $('#provinsi').on('change', function() {
-            let kode = $(this).val();
-            getWilayah(kode, '#kabupaten');
-            $('#kecamatan').html('<option value="">Pilih Kecamatan</option>').trigger('change');
-            $('#kelurahan').html('<option value="">Pilih Kelurahan / Desa</option>').trigger('change');
-        });
+        // $('#provinsi').on('change', function() {
+        //     let kode = $(this).val();
+        //     getWilayah(kode, '#kabupaten');
+        //     $('#kecamatan').html('<option value="">Pilih Kecamatan</option>').trigger('change');
+        //     $('#kelurahan').html('<option value="">Pilih Kelurahan / Desa</option>').trigger('change');
+        // });
 
-        $('#kabupaten').on('change', function() {
-            let kode = $(this).val();
-            getWilayah(kode, '#kecamatan');
-            $('#kelurahan').html('<option value="">Pilih Kelurahan / Desa</option>').trigger('change');
-        });
+        // $('#kabupaten').on('change', function() {
+        //     let kode = $(this).val();
+        //     getWilayah(kode, '#kecamatan');
+        //     $('#kelurahan').html('<option value="">Pilih Kelurahan / Desa</option>').trigger('change');
+        // });
 
-        $('#kecamatan').on('change', function() {
-            let kode = $(this).val();
-            getWilayah(kode, '#kelurahan');
-        });
+        // $('#kecamatan').on('change', function() {
+        //     let kode = $(this).val();
+        //     getWilayah(kode, '#kelurahan');
+        // });
 
-        function getWilayah(kode, target) {
-            $(target).html('<option value="">Memuat...</option>');
-            $.get('/get-wilayah', {
-                kode: kode
-            }, function(data) {
-                let html = '<option value="">Pilih</option>';
-                $.each(data, function(i, d) {
-                    html += `<option value="${d.kode}">${d.nama}</option>`;
-                });
-                $(target).html(html).trigger('change');
-            });
-        }
+        // function getWilayah(kode, target) {
+        //     $(target).html('<option value="">Memuat...</option>');
+        //     $.get('/get-wilayah', {
+        //         kode: kode
+        //     }, function(data) {
+        //         let html = '<option value="">Pilih</option>';
+        //         $.each(data, function(i, d) {
+        //             html += `<option value="${d.kode}">${d.nama}</option>`;
+        //         });
+        //         $(target).html(html).trigger('change');
+        //     });
+        // }
     });
 </script>
 <script>
@@ -283,6 +283,104 @@
             } else {
                 $('#data-anak-wrapper').hide();
             }
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+
+        $("#provinsi").select2({
+            width: 'resolve',
+            height: 'resolve',
+            ajax: {
+                url: "{{ route('provinsi.index') }}",
+                processResults: function({
+                    data
+                }) {
+                    return {
+                        results: $.map(data, function(item) {
+                            return {
+                                id: item.code,
+                                text: item.name
+                            }
+                            console.log(item.code);
+
+                        })
+                    }
+                }
+            }
+        });
+
+        $("#provinsi").change(function() {
+            let id = $('#provinsi').val();
+
+            $("#kabupaten").select2({
+                width: 'resolve',
+                height: 'resolve',
+                ajax: {
+                    url: "{{ url('selectRegenc') }}/" + id,
+                    processResults: function({
+                        data
+                    }) {
+                        return {
+                            results: $.map(data, function(item) {
+                                return {
+                                    id: item.code,
+                                    text: item.name
+                                }
+                            })
+                        }
+                    }
+                }
+            });
+        });
+
+        $("#kabupaten").change(function() {
+            let id = $('#kabupaten').val();
+
+            $("#kecamatan").select2({
+                width: 'resolve',
+                height: 'resolve',
+                ajax: {
+                    url: "{{ url('selectDistrict') }}/" + id,
+                    processResults: function({
+                        data
+                    }) {
+                        return {
+                            results: $.map(data, function(item) {
+                                return {
+                                    id: item.code,
+                                    text: item.name
+                                }
+                            })
+                        }
+                    }
+                }
+            });
+        });
+
+        $("#kecamatan").change(function() {
+            let id = $('#kecamatan').val();
+
+            $("#kelurahan").select2({
+                width: 'resolve',
+                height: 'resolve',
+                ajax: {
+                    url: "{{ url('selectVillage') }}/" + id,
+                    processResults: function({
+                        data
+                    }) {
+                        return {
+                            results: $.map(data, function(item) {
+                                return {
+                                    id: item.code,
+                                    text: item.name
+                                }
+                            })
+                        }
+                    }
+                }
+            });
         });
     });
 </script>
