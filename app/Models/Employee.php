@@ -8,29 +8,51 @@ class Employee extends Model
 {
     protected $table = 'employees';
     protected $fillable = [
-        'nik_karyawan',
-        'nama_lengkap',
-        'nik_ktp',
-        'no_hp',
-        'no_hp_keluarga',
-        'status_keluarga',
-        'nama_ibu',
-        'gol_darah',
+        'number_of_employees',
+        'name',
+        'national_id',
+        'phone',
+        'family_phone_number',
+        'family_status',
+        'biological_mothers_name',
+        'blood_type',
         'npwp',
         'email',
-        'alamat_ktp',
-        'provinsi',
-        'kota',
-        'kecamatan',
-        'kelurahan',
-        'rt',
-        'rw',
-        'tinggal_di',
-        'alamat_domisili',
-        'status_pernikahan',
-        'nama_pasangan',
-        'jumlah_anak',
-        'nama_anak',
-        'tanggal_lahir_anak',
+        'address',
+        'address_province',
+        'address_city',
+        'address_district',
+        'address_village',
+        'address_rt',
+        'address_rw',
+        'residence',
+        'domicile',
+        'marital_status',
+        'spouse_name',
+        'number_of_children',
+        'children_name',
+        'children_birth_date',
+        'children_json',
     ];
+
+    // Relasi ke Wilayah untuk setiap level
+    public function provinsiWilayah()
+    {
+        return $this->hasOne(Wilayah::class, 'kode', 'provinsi');
+    }
+
+    public function kotaWilayah()
+    {
+        return $this->hasOne(Wilayah::class, 'kode', 'kota');
+    }
+
+    public function kecamatanWilayah()
+    {
+        return $this->hasOne(Wilayah::class, 'kode', 'kecamatan');
+    }
+
+    public function kelurahanWilayah()
+    {
+        return $this->hasOne(Wilayah::class, 'kode', 'kelurahan');
+    }
 }

@@ -36,11 +36,13 @@ Route::get('/payslip', function () {
 Route::get('/counseling', [CounselingController::class, 'index'])->name('counseling');
 Route::post('/counseling/store', [CounselingController::class, 'store'])->name('counseling.store');
 
-Route::get('/updateData', function () {
-    return view('pages/updateData/form');
-})->name('e_payslip');
+// Route::get('/updateData', function () {
+//     return view('pages/updateData/form');
+// })->name('e_payslip');
 
 Route::get('/form-karyawan', [EmployeeController::class, 'create']);
 Route::post('/form-karyawan', [EmployeeController::class, 'store'])->name('form-karyawan.store');
 Route::get('/get-wilayah', [EmployeeController::class, 'selectedWilayah']);
+Route::get('/get-data-karyawan', [EmployeeController::class, 'index'])->name('karyawan.index');
+
 

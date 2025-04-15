@@ -13,34 +13,34 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
-            $table->string('nik_karyawan');
-            $table->string('nama_lengkap');
-            $table->string('nik_ktp');
-            $table->string('no_hp');
-            $table->string('no_hp_keluarga');
-            $table->string('status_keluarga');
-            $table->string('nama_ibu');
-            $table->string('gol_darah');
+            $table->string('number_of_employees');
+            $table->string('name');
+            $table->string('national_id');
+            $table->string('phone');
+            $table->string('family_phone_number');
+            $table->string('family_status');
+            $table->string('biological_mothers_name');
+            $table->string('blood_type');
             $table->string('npwp')->nullable();
             $table->string('email');
 
-            $table->text('alamat_ktp');
-            $table->string('provinsi');
-            $table->string('kota');
-            $table->string('kecamatan');
-            $table->string('kelurahan');
-            $table->string('rt');
-            $table->string('rw');
+            $table->text('address');
+            $table->string('address_province');
+            $table->string('address_city');
+            $table->string('address_district');
+            $table->string('address_village');
+            $table->string('address_rt');
+            $table->string('address_rw');
 
-            $table->string('tinggal_di');
-            $table->text('alamat_domisili');
+            $table->string('residence');
+            $table->text('address_domicile');
 
-            $table->string('status_pernikahan');
-            $table->string('nama_pasangan')->nullable();
+            $table->string('marital_status');
+            $table->string('spouse_name')->nullable();
 
-            $table->integer('jumlah_anak')->nullable();
-            $table->string('nama_anak')->nullable();
-            $table->date('tanggal_lahir_anak')->nullable();
+            $table->integer('number_of_children')->nullable();
+            $table->string('children_name')->nullable();
+            $table->date('children_birth_date')->nullable();
             $table->timestamps();
         });
     }

@@ -93,7 +93,7 @@
                 <x-input label="Alamat Sesuai KTP*" name="alamat_ktp" />
                 <div class="space-y-1">
                     <label class="block text-sm font-medium text-gray-700">Provinsi*</label>
-                    <select id="provinsi"
+                    <select id="provinsi" name="provinsi"
                         class="input-field-select w-full border border-gray-300 rounded-md px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-purple-500">
                         <option value="">Pilih Provinsi</option>
                         @foreach ($provinsi as $item)
@@ -103,7 +103,7 @@
                 </div>
                 <div class="space-y-1">
                     <label class="block text-sm font-medium text-gray-700">Kabupaten/Kota*</label>
-                    <select id="kabupaten"
+                    <select id="kabupaten" name="kota"
                         class="input-field-select w-full border border-gray-300 rounded-md px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-purple-500">
                         <option value="">Pilih Kab / Kota</option>
                         {{-- @foreach ($kabupaten as $item)
@@ -113,7 +113,7 @@
                 </div>
                 <div class="space-y-1">
                     <label class="block text-sm font-medium text-gray-700">Kecamatan*</label>
-                    <select id="kecamatan"
+                    <select id="kecamatan" name="kecamatan"
                         class="input-field-select w-full border border-gray-300 rounded-md px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-purple-500">
                         <option value="">Pilih Kecamatan</option>
                         {{-- @foreach ($kecamatan as $item)
@@ -123,7 +123,7 @@
                 </div>
                 <div class="space-y-1">
                     <label class="block text-sm font-medium text-gray-700">Kelurahan/Desa*</label>
-                    <select id="kelurahan"
+                    <select id="kelurahan" name="kelurahan"
                         class="input-field-select w-full border border-gray-300 rounded-md px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-purple-500">
                         <option value="">Pilih Kelurahan / Desa</option>
                         {{-- @foreach ($kelurahan as $item)
@@ -137,8 +137,8 @@
                 {{-- <x-input label="Kelurahan / Desa*" name="kelurahan" /> --}}
 
                 <div class="flex gap-2">
-                    <x-input label="RT*" name="rt" />
-                    <x-input label="RW*" name="rw" />
+                    <x-input label="RT*" name="rt" type="number"/>
+                    <x-input label="RW*" name="rw" type="number"/>
                 </div>
 
                 {{-- III. Survey Tempat Tinggal --}}
@@ -154,9 +154,38 @@
 
                 {{-- V. Data Anak --}}
                 <h2 class="font-semibold text-gray-700">V. Data Anak</h2>
-                <x-select label="Jumlah Anak" name="jumlah_anak" :options="[0, 1, 2, 3, 4, 5]" />
-                <x-input label="Nama Anak" name="nama_anak" />
-                <x-input label="Tanggal Lahir Anak" name="tanggal_lahir_anak" type="date" />
+                <div class="space-y-1">
+                    <label class="block text-sm font-medium text-gray-700">Jumlah Anak</label>
+                    <select name="jumlah_anak" id="jumlah_anak"
+                        class=" input-field-select w-full border border-gray-300 rounded-md px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        <option value="">-- Pilih --</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    @error('jumlah_anak')
+                        <p class="text-red-500 text-xs">{{ $message }}</p>
+                    @enderror
+                </div>
+                {{-- <x-select id="jmlh_anak" label="Jumlah Anak" name="jumlah_anak" :options="[0, 1, 2, 3, 4, 5]" /> --}}
+                <div id="data-anak-wrapper" class="mt-3" style="display: block;">
+                    <div class="row g-2">
+                        <div class="col-md-6">
+                            <x-input label="Nama Anak" name="nama_anak[]" />
+                        </div>
+                        <div class="col-md-6">
+                            <x-input label="Tanggal Lahir Anak" name="tanggal_lahir_anak[]" type="date" />
+                        </div>
+                    </div>
+                </div>
 
                 {{-- Tombol --}}
                 <div class="flex justify-between">
@@ -173,8 +202,7 @@
     <div class="footer text-center mt-3 pb-2">
         <div class="container">
             <a class="navbar-brand" id="container-footer" href="#">
-                <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="HWI" width="127"
-                    height="72">
+                <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="HWI" width="127" height="72">
             </a>
             <p class="pt-2">© 2024 All rights reserved. PT Hwaseung Indonesia - Jepara</p>
         </div>
@@ -231,6 +259,31 @@
                 $(target).html(html).trigger('change');
             });
         }
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#jumlah_anak').on('change', function() {
+            let jumlah = $(this).val();
+            if (jumlah > 0) {
+                $('#data-anak-wrapper').show();
+                $('#data-anak-wrapper').html('');
+                for (let i = 1; i <= jumlah; i++) {
+                    $('#data-anak-wrapper').append(`
+                        <div class="row g-2">
+                            <div class="col-md-6">
+                                <x-input label="Nama Anak ${i}" name="nama_anak[]" />
+                            </div>
+                            <div class="col-md-6">
+                                <x-input label="Tanggal Lahir Anak ${i}" name="tanggal_lahir_anak[]" type="date" />
+                            </div>
+                        </div>
+                    `);
+                }
+            } else {
+                $('#data-anak-wrapper').hide();
+            }
+        });
     });
 </script>
 

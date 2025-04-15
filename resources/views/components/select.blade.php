@@ -1,4 +1,4 @@
-@props(['class','label', 'name', 'options' => []])
+@props(['label', 'name', 'options' => []])
 
 <div class="space-y-1">
     <label class="block text-sm font-medium text-gray-700">{{ $label }}</label>

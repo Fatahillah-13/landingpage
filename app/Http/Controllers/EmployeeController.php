@@ -9,6 +9,13 @@ use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
+    public function index()
+    {
+        $employees = Employee::with(['provinsiWilayah', 'kotaWilayah', 'kecamatanWilayah', 'kelurahanWilayah'])->get();
+
+        return view('pages.updateData.index', compact('employees'));
+    }
+
     public function create()
     {
         $provinsi = Wilayah::whereRaw('CHAR_LENGTH(kode) = 2')->orderBy('nama')->get();
@@ -40,7 +47,12 @@ class EmployeeController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $request->merge([
+            'rt' => (string) $request->rt,
+            'rw' => (string) $request->rw,
+        ]);
+
+        $request->validate([
             'nik_karyawan' => 'required|numeric|digits_between:5,20',
             'nama_lengkap' => 'required|string|max:100',
             'nik_ktp' => 'required|numeric|digits:16',
@@ -66,13 +78,57 @@ class EmployeeController extends Controller
             'status_pernikahan' => 'required|string',
             'nama_pasangan' => 'nullable|string',
             'jumlah_anak' => 'nullable|numeric',
-            'nama_anak' => 'nullable|string',
-            'tanggal_lahir_anak' => 'nullable|date',
+            'nama_anak' => 'nullable|array',
+            'nama_anak.*' => 'nullable|string|max:255',
+            'tanggal_lahir_anak' => 'nullable|array',
+            'tanggal_lahir_anak.*' => 'nullable|date',
         ]);
 
-        Employee::create($validated);
+        // Proses data anak
+        $anak = [];
+        if ($request->jumlah_anak > 0 && $request->has('nama_anak') && $request->has('tanggal_lahir_anak')) {
+            for ($i = 0; $i < $request->jumlah_anak; $i++) {
+                // Pastikan data tidak kosong
+                if (!empty($request->nama_anak[$i]) && !empty($request->tanggal_lahir_anak[$i])) {
+                    $anak[] = [
+                        'nama' => $request->nama_anak[$i],
+                        'tanggal_lahir' => $request->tanggal_lahir_anak[$i],
+                    ];
+                }
+            }
+        }
 
-        // Simpan data atau lakukan sesuatu...
-        return back()->with('success', 'Data berhasil disimpan!');
+        // Simpan data karyawan
+        $karyawan = new Employee();
+        $karyawan->number_of_employees = $request->nik_karyawan;
+        $karyawan->name = $request->nama_lengkap;
+        $karyawan->national_id = $request->nik_ktp;
+        $karyawan->email = $request->email;
+        $karyawan->phone = $request->no_hp;
+        $karyawan->family_phone_number = $request->no_hp_keluarga;
+        $karyawan->family_status = $request->status_keluarga;
+        $karyawan->biological_mothers_name = $request->nama_ibu;
+        $karyawan->blood_type = $request->gol_darah;
+        $karyawan->npwp = $request->npwp;
+
+        $karyawan->address = $request->alamat_ktp;
+        $karyawan->address_province = $request->provinsi;
+        $karyawan->address_city = $request->kota;
+        $karyawan->address_district = $request->kecamatan;
+        $karyawan->address_village = $request->kelurahan;
+        $karyawan->address_rt = $request->rt;
+        $karyawan->address_rw = $request->rw;
+
+        $karyawan->residence = $request->tinggal_di;
+        $karyawan->domicile = $request->alamat_domisili;
+
+        $karyawan->marital_status = $request->status_pernikahan;
+        $karyawan->spouse_name = $request->nama_pasangan;
+
+        $karyawan->number_of_children = $request->jumlah_anak;
+        $karyawan->children_json = json_encode($anak); // simpan dalam bentuk JSON
+        $karyawan->save();
+
+        return redirect()->back()->with('success', 'Data karyawan berhasil disimpan.');
     }
 }
