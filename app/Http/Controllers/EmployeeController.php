@@ -56,6 +56,35 @@ class EmployeeController extends Controller
             'rw' => (string) $request->rw,
         ]);
 
+        $months = [
+            'januari' => '01',
+            'februari' => '02',
+            'maret' => '03',
+            'april' => '04',
+            'mei' => '05',
+            'juni' => '06',
+            'juli' => '07',
+            'agustus' => '08',
+            'september' => '09',
+            'oktober' => '10',
+            'november' => '11',
+            'desember' => '12'
+        ];
+
+        $month = strtolower($request->month);
+        $monthNumber = $months[$month] ?? '01'; // Default to '01' if month is invalid
+
+        if (!is_numeric($request->year)) {
+            $request->merge(['year' => (int) $request->year]);
+        }
+
+        if (!is_numeric($request->day)) {
+            $request->merge(['day' => (int) $request->day]);
+        }
+
+        $birthdate = sprintf('%04d-%02d-%02d', $request->year, $monthNumber, $request->day);
+        $request->merge(['birthdate' => $birthdate]);
+
         $request->merge([
             'provinsi' => Province::where('code', $request->provinsi)->value('name'),
             'kota' => Cities::where('code', $request->kota)->value('name'),
@@ -72,6 +101,10 @@ class EmployeeController extends Controller
             'status_keluarga' => 'required|string',
             'nama_ibu' => 'required|string|max:100',
             'gol_darah' => 'required|in:A,B,AB,O',
+            'gender' => 'required|string|in:Laki-laki,Perempuan',
+            'religion' => 'required|string|in:Islam,Kristen,Katholik,Hindu,Budha,Konghucu',
+            'birthdate' => 'required|date',
+            'birthplace' => 'required|string',
             'npwp' => 'nullable|string',
             'email' => 'required|email',
 
@@ -120,6 +153,10 @@ class EmployeeController extends Controller
         $karyawan->family_status = $request->status_keluarga;
         $karyawan->biological_mothers_name = $request->nama_ibu;
         $karyawan->blood_type = $request->gol_darah;
+        $karyawan->gender = $request->gender;
+        $karyawan->religion = $request->religion;
+        $karyawan->date_of_birth = $request->birthdate;
+        $karyawan->place_of_birth = $request->birthplace;
         $karyawan->npwp = $request->npwp;
 
         $karyawan->address = $request->alamat_ktp;

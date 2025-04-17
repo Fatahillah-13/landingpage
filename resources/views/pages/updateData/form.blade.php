@@ -91,6 +91,27 @@
                     <li>Isikan sesuai dengan gambar yang di dalam kotak merah</li>
                 </ul>
                 <x-input label="Alamat Sesuai KTP*" name="alamat_ktp" />
+                <div class="flex gap-2">
+                    <x-select label="Tanggal Lahir - Hari*" name="day" :options="range(1, 31)" />
+                    <x-select label="Tanggal Lahir - Bulan*" name="month" :options="[
+                        1 => 'Januari',
+                        2 => 'Februari',
+                        3 => 'Maret',
+                        4 => 'April',
+                        5 => 'Mei',
+                        6 => 'Juni',
+                        7 => 'Juli',
+                        8 => 'Agustus',
+                        9 => 'September',
+                        10 => 'Oktober',
+                        11 => 'November',
+                        12 => 'Desember',
+                    ]" />
+                    <x-select label="Tanggal Lahir - Tahun*" name="year" :options="range(date('Y'), 1900)" />
+                </div>
+                <x-input label="Tempat Lahir*" name="birthplace" />
+                <x-select label="Jenis Kelamin*" name="gender" :options="['Laki-laki', 'Perempuan']"></x-select>
+                <x-select label="Agama*" name="religion" :options="['Islam','Kristen','Katholik','Budha','Hindu','Konghucu']"></x-select>
                 <div class="space-y-1">
                     <label class="block text-sm font-medium text-gray-700">Provinsi*</label>
                     <select id="provinsi" name="provinsi"

@@ -16,6 +16,8 @@ class Employee extends Model
         'family_status',
         'biological_mothers_name',
         'blood_type',
+        'gender',
+        'religion',
         'npwp',
         'email',
         'address',

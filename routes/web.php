@@ -33,6 +33,10 @@ Route::get('/payslip', function () {
     return view('pages/payslip/payslip');
 })->name('e_payslip');
 
+Route::get('/resignForm', function () {
+    return view('pages/resign/form');
+})->name('resignform');
+
 Route::get('/counseling', [CounselingController::class, 'index'])->name('counseling');
 Route::post('/counseling/store', [CounselingController::class, 'store'])->name('counseling.store');
 
