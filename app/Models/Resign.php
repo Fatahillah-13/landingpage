@@ -13,20 +13,24 @@ class Resign extends Model
         'position',
         'department',
         'building',
-        'hire_date',
-        'date_out',
+        // 'hire_date',
+        // 'date_out',
         'address',
-        'date_resignation_submissions',
-        'type',
+        // 'date_resignation_submissions',
+        // 'type',
         'reason',
         'detail_reason',
-        'periode_of_service',
-        'age',
+        // 'periode_of_service',
+        // 'age',
         'suggestion',
-        'status_resignsubmissions',
-        'using_media',
-        'classification',
-        'print',
+        // 'status_resignsubmissions',
+        // 'using_media',
+        // 'classification',
+        // 'print',
     ];
 
+    public function kuisioner()
+    {
+        return $this->hasOne(kuisioner::class, 'resgination_submissions_id', 'id');
+    }
 }

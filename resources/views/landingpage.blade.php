@@ -168,7 +168,7 @@
                 <div class="col-6 col-md-4 col-lg-2">
                     <div class="service-item">
                         <div class="service-icon-wrapper">
-                            <a href="{{ route('resignform') }}" style="text-decoration: none">
+                            <a href="/resignForm" style="text-decoration: none">
                                 <img src="{{ asset('assets/resign_icon.png') }}" class="service-icon"
                                     alt="Online Resignation Service" width="32" height="32">
                             </a>

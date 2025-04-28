@@ -34,9 +34,9 @@ Route::get('/payslip', function () {
     return view('pages/payslip/payslip');
 })->name('e_payslip');
 
-Route::get('/resignForm', function () {
-    return view('pages/resign/form');
-})->name('resignform');
+// Route::get('/resignForm', function () {
+//     return view('pages/resign/form');
+// });
 
 Route::get('/resignForm/download', function () {
     return view('pages/resign/downloadpage');
@@ -59,4 +59,5 @@ Route::get('selectRegenc/{id}', [RegionController::class, 'cities'])->name('citi
 Route::get('selectDistrict/{id}', [RegionController::class, 'district'])->name('district.index');
 Route::get('selectVillage/{id}', [RegionController::class, 'village'])->name('village.index');
 
+Route::get('/resignForm', [ResignController::class, 'create'])->name('resignform.create');
 Route::post('/resignForm', [ResignController::class, 'store'])->name('resignform.store');

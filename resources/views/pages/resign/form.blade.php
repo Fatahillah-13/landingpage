@@ -37,7 +37,7 @@
 
 <body>
     <!-- Modal Background -->
-    <div x-data="{ open: true }" x-show="open"
+    {{-- <div x-data="{ open: true }" x-show="open"
         class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4">
         <!-- Scrollable Container -->
         <div class="bg-yellow-50 text-yellow-900 w-full max-w-xl max-h-[90vh] overflow-y-auto p-6 rounded-lg shadow relative"
@@ -82,7 +82,7 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- End Modal Background -->
 
     {{-- Navigation Bar --}}
@@ -144,6 +144,13 @@
                                 placeholder="isikan disini" required>
                         </div>
 
+                        {{-- <div class="mb-4">
+                            <label class="block mb-1 font-medium">Nama Lengkap*</label>
+                            <input type="text" name="name"
+                                class="w-full border rounded px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+                                placeholder="isikan disini" required>
+                        </div> --}}
+
                         <div class="mb-4">
                             <label class="block mb-1 font-medium">NIK KTP*</label>
                             <input type="text" name="national_id"
@@ -188,7 +195,7 @@
 
                         <div class="mb-4">
                             <label class="block mb-1 font-medium">Alamat*</label>
-                            <input type="text" name="addrress" class="w-full border rounded px-4 py-2"
+                            <input type="text" name="address" class="w-full border rounded px-4 py-2"
                                 placeholder="isikan disini" required>
                         </div>
                     </div>
