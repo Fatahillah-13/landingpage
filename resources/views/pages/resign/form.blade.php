@@ -37,7 +37,7 @@
 
 <body>
     <!-- Modal Background -->
-    {{-- <div x-data="{ open: true }" x-show="open"
+    <div x-data="{ open: true }" x-show="open"
         class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4">
         <!-- Scrollable Container -->
         <div class="bg-yellow-50 text-yellow-900 w-full max-w-xl max-h-[90vh] overflow-y-auto p-6 rounded-lg shadow relative"
@@ -82,7 +82,7 @@
                 </a>
             </div>
         </div>
-    </div> --}}
+    </div>
     <!-- End Modal Background -->
 
     {{-- Navigation Bar --}}

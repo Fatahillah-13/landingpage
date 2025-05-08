@@ -42,12 +42,12 @@ Route::get('/resignForm/download', function () {
     return view('pages/resign/downloadpage');
 })->name('berkas.download');
 
+Route::get('/photobooth', function () {
+    return view('pages/photobooth/photo');
+})->name('photobooth');
+
 Route::get('/counseling', [CounselingController::class, 'index'])->name('counseling');
 Route::post('/counseling/store', [CounselingController::class, 'store'])->name('counseling.store');
-
-// Route::get('/updateData', function () {
-//     return view('pages/updateData/form');
-// })->name('e_payslip');
 
 Route::get('/form-karyawan', [EmployeeController::class, 'create']);
 Route::post('/form-karyawan', [EmployeeController::class, 'store'])->name('form-karyawan.store');

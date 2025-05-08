@@ -10,6 +10,7 @@ use App\Models\Employee as ModelsEmployee;
 use App\Models\Province;
 use App\Models\Village;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EmployeeController extends Controller
 {
@@ -49,26 +50,29 @@ class EmployeeController extends Controller
         return response()->json($data);
     }
 
+
     public function store(Request $request)
     {
+
+        // dd($request->sum_children);
         $request->merge([
             'rt' => (string) $request->rt,
             'rw' => (string) $request->rw,
         ]);
 
         $months = [
-            'januari' => '01',
-            'februari' => '02',
-            'maret' => '03',
-            'april' => '04',
-            'mei' => '05',
-            'juni' => '06',
-            'juli' => '07',
-            'agustus' => '08',
-            'september' => '09',
-            'oktober' => '10',
-            'november' => '11',
-            'desember' => '12'
+            'Januari' => '01',
+            'Februari' => '02',
+            'Maret' => '03',
+            'April' => '04',
+            'Mei' => '05',
+            'Juni' => '06',
+            'Juli' => '07',
+            'Agustus' => '08',
+            'September' => '09',
+            'Oktober' => '10',
+            'November' => '11',
+            'Desember' => '12'
         ];
 
         $month = strtolower($request->month);
@@ -85,96 +89,127 @@ class EmployeeController extends Controller
         $birthdate = sprintf('%04d-%02d-%02d', $request->year, $monthNumber, $request->day);
         $request->merge(['birthdate' => $birthdate]);
 
+
+        $request->validate(
+            [
+                'employee_id' => 'required|numeric',
+                'fullname' => 'required|string|max:150',
+                'national_id' => 'required|numeric|digits:16',
+                'phone_number' => 'required|numeric',
+                'family_phone_number' => 'required|numeric',
+                'family_relation' => 'required|string',
+                'biological_mother_name' => 'required|string|max:100',
+                'blood_type' => 'required|in:A,B,AB,O',
+                'gender' => 'required|string|in:Laki-laki,Perempuan',
+                'religion' => 'required|string|in:Islam,Kristen,Katholik,Hindu,Budha,Konghucu',
+                'birthdate' => 'required|date',
+                'birthplace' => 'required|string',
+                'npwp' => 'nullable|string',
+                'email' => 'required|email',
+
+                'address' => 'required|string',
+                'province' => 'required|string',
+                'city' => 'required|string',
+                'district' => 'required|string',
+                'village' => 'required|string',
+                'rt' => 'required|numeric',
+                'rw' => 'required|numeric',
+
+                'residence' => 'required|string',
+                'domicile' => 'required|string',
+
+                'marital_status' => 'required|string',
+                'spouse_name' => 'required_if:marital_status,Kawin',
+                'sum_children' => 'nullable|numeric',
+                'child_name' => 'required_unless:sum_children,0|array',
+                'child_name.*' => 'required_unless:sum_children,0|string|max:255',
+                'child_birthdate' => 'required_unless:sum_children,0|array',
+                'child_birthdate.*' => 'required_unless:sum_children,0|date',
+            ],
+            [
+                'employee_id.required' => 'NIK Karyawan harus diisi.',
+                'employee_id.numeric' => 'NIK Karyawan harus berupa angka.',
+                'employee_id.digits_between' => 'NIK Karyawan harus terdiri dari 5 hingga 20 digit.',
+                'fullname.required' => 'Nama Lengkap harus diisi.',
+                'national_id.required' => 'NIK KTP harus diisi.',
+                'national_id.numeric' => 'NIK KTP harus berupa angka.',
+                'national_id.digits' => 'NIK KTP harus terdiri dari 16 digit.',
+                'phone_number.required' => 'Nomor HP harus diisi.',
+                'phone_number.numeric' => 'Nomor HP harus berupa angka.',
+                'family_phone_number.required' => 'Nomor HP Keluarga harus diisi.',
+                'family_phone_number.numeric' => 'Nomor HP Keluarga harus berupa angka.',
+                'family_relation.required' => 'Status Keluarga harus diisi.',
+                'biological_mother_name.required' => 'Nama Ibu harus diisi.',
+                'blood_type.required' => 'Golongan Darah harus diisi.',
+                'blood_type.in' => 'Golongan Darah harus salah satu dari A, B, AB, O.',
+                'domicile.required' => 'Alamat Domisili harus diisi.',
+                'marital_status.required' => 'Status Pernikahan harus diisi.',
+                'spouse_name.required_if' => 'Nama Pasangan harus diisi jika status pernikahan Kawin.',
+                'sum_children.numeric' => 'Jumlah Anak harus berupa angka.',
+                'sum_children.required_if' => 'Jumlah Anak harus diisi jika ada anak.',
+                'child_name.required_if' => 'Nama Anak harus diisi jika ada anak.',
+                'child_name.*.string' => 'Nama Anak harus diisi.',
+                'child_birthdate.required_if' => 'Tanggal Lahir Anak harus diisi jika ada anak.',
+                'child_birthdate.*.date' => 'Tanggal Lahir Anak harus diisi.',
+                'child_birthdate.*.required_if' => 'Tanggal Lahir Anak harus diisi jika ada anak.',
+            ]
+        );
+
         $request->merge([
-            'provinsi' => Province::where('code', $request->provinsi)->value('name'),
-            'kota' => Cities::where('code', $request->kota)->value('name'),
-            'kecamatan' => District::where('code', $request->kecamatan)->value('name'),
-            'kelurahan' => Village::where('code', $request->kelurahan)->value('name'),
-        ]);
-
-        $request->validate([
-            'nik_karyawan' => 'required|numeric|digits_between:5,20',
-            'nama_lengkap' => 'required|string|max:100',
-            'nik_ktp' => 'required|numeric|digits:16',
-            'no_hp' => 'required|numeric',
-            'no_hp_keluarga' => 'required|numeric',
-            'status_keluarga' => 'required|string',
-            'nama_ibu' => 'required|string|max:100',
-            'gol_darah' => 'required|in:A,B,AB,O',
-            'gender' => 'required|string|in:Laki-laki,Perempuan',
-            'religion' => 'required|string|in:Islam,Kristen,Katholik,Hindu,Budha,Konghucu',
-            'birthdate' => 'required|date',
-            'birthplace' => 'required|string',
-            'npwp' => 'nullable|string',
-            'email' => 'required|email',
-
-            'alamat_ktp' => 'required|string',
-            'provinsi' => 'required|string',
-            'kota' => 'required|string',
-            'kecamatan' => 'required|string',
-            'kelurahan' => 'required|string',
-            'rt' => 'required|numeric',
-            'rw' => 'required|numeric',
-
-            'tinggal_di' => 'required|string',
-            'alamat_domisili' => 'required|string',
-
-            'status_pernikahan' => 'required|string',
-            'nama_pasangan' => 'nullable|string',
-            'jumlah_anak' => 'nullable|numeric',
-            'nama_anak' => 'nullable|array',
-            'nama_anak.*' => 'nullable|string|max:255',
-            'tanggal_lahir_anak' => 'nullable|array',
-            'tanggal_lahir_anak.*' => 'nullable|date',
+            'province' => Province::where('code', $request->province)->value('name'),
+            'city' => Cities::where('code', $request->city)->value('name'),
+            'district' => District::where('code', $request->district)->value('name'),
+            'village' => Village::where('code', $request->village)->value('name'),
         ]);
 
         // Proses data anak
-        $anak = [];
-        if ($request->jumlah_anak > 0 && $request->has('nama_anak') && $request->has('tanggal_lahir_anak')) {
-            for ($i = 0; $i < $request->jumlah_anak; $i++) {
+        $children = [];
+        if ($request->sum_children > 0 && $request->has('child_name') && $request->has('child_birthdate')) {
+            for ($i = 0; $i < $request->sum_children; $i++) {
                 // Pastikan data tidak kosong
-                if (!empty($request->nama_anak[$i]) && !empty($request->tanggal_lahir_anak[$i])) {
-                    $anak[] = [
-                        'nama' => $request->nama_anak[$i],
-                        'tanggal_lahir' => $request->tanggal_lahir_anak[$i],
+                if (!empty($request->child_name[$i]) && !empty($request->child_birthdate[$i])) {
+                    $children[] = [
+                        'child_name' => $request->child_name[$i],
+                        'child_birthdate' => $request->child_birthdate[$i],
                     ];
                 }
+                echo $request->child_name[$i] . '-' . $request->child_birthdate[$i];
             }
         }
 
         // Simpan data karyawan
         $karyawan = new Employee();
-        $karyawan->number_of_employees = $request->nik_karyawan;
-        $karyawan->name = $request->nama_lengkap;
-        $karyawan->national_id = $request->nik_ktp;
+        $karyawan->number_of_employees = $request->employee_id;
+        $karyawan->name = $request->fullname;
+        $karyawan->national_id = $request->national_id;
         $karyawan->email = $request->email;
-        $karyawan->phone = $request->no_hp;
-        $karyawan->family_phone_number = $request->no_hp_keluarga;
-        $karyawan->family_status = $request->status_keluarga;
-        $karyawan->biological_mothers_name = $request->nama_ibu;
-        $karyawan->blood_type = $request->gol_darah;
+        $karyawan->phone = $request->phone_number;
+        $karyawan->family_phone_number = $request->family_phone_number;
+        $karyawan->family_status = $request->family_relation;
+        $karyawan->biological_mothers_name = $request->biological_mother_name;
+        $karyawan->blood_type = $request->blood_type;
         $karyawan->gender = $request->gender;
         $karyawan->religion = $request->religion;
         $karyawan->date_of_birth = $request->birthdate;
         $karyawan->place_of_birth = $request->birthplace;
         $karyawan->npwp = $request->npwp;
 
-        $karyawan->address = $request->alamat_ktp;
-        $karyawan->address_province = $request->provinsi;
-        $karyawan->address_city = $request->kota;
-        $karyawan->address_district = $request->kecamatan;
-        $karyawan->address_village = $request->kelurahan;
+        $karyawan->address = $request->address;
+        $karyawan->address_province = $request->province;
+        $karyawan->address_city = $request->city;
+        $karyawan->address_district = $request->district;
+        $karyawan->address_village = $request->village;
         $karyawan->address_rt = $request->rt;
         $karyawan->address_rw = $request->rw;
 
-        $karyawan->residence = $request->tinggal_di;
-        $karyawan->domicile = $request->alamat_domisili;
+        $karyawan->residence = $request->residence;
+        $karyawan->domicile = $request->domicile;
 
-        $karyawan->marital_status = $request->status_pernikahan;
-        $karyawan->spouse_name = $request->nama_pasangan;
+        $karyawan->marital_status = $request->marital_status;
+        $karyawan->spouse_name = $request->spouse_name;
 
-        $karyawan->number_of_children = $request->jumlah_anak;
-        $karyawan->children_json = json_encode($anak); // simpan dalam bentuk JSON
+        $karyawan->number_of_children = $request->sum_children;
+        $karyawan->children_json = json_encode($children); // simpan dalam bentuk JSON
         $karyawan->save();
 
         return redirect()->back()->with('success', 'Data karyawan berhasil disimpan.');

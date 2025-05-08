@@ -68,19 +68,25 @@
             <form action="{{ route('form-karyawan.store') }}" method="POST" class="space-y-6">
                 @csrf
 
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
                 {{-- I. Data Pribadi --}}
                 <h2 class="font-semibold text-gray-700">I. Data Pribadi</h2>
 
-                <x-input label="NIK ID Card Karyawan*" name="nik_karyawan" />
-                <x-input label="Nama Lengkap*" name="nama_lengkap" />
-                <x-input label="NIK KTP*" name="nik_ktp" />
-                <x-input label="Nomor HP / Whatsapp*" name="no_hp" />
-                <x-input label="Nomor HP / Whatsapp Keluarga yang Bisa Dihubungi*" name="no_hp_keluarga" />
+                <x-input label="NIK ID Card Karyawan*" name="employee_id" />
+                <x-input label="Nama Lengkap*" name="fullname" />
+                <x-input label="NIK KTP*" name="national_id" />
+                <x-input label="Nomor HP / Whatsapp*" name="phone_number" />
+                <x-input label="Nomor HP / Whatsapp Keluarga yang Bisa Dihubungi*" name="family_phone_number" />
 
-                <x-select label="Status Hubungan Keluarga*" name="status_keluarga" :options="['Ayah', 'Ibu', 'Kakak', 'Adik', 'Suami', 'Istri', 'Anak']" />
-                <x-input label="Nama Ibu Kandung*" name="nama_ibu" />
-                <x-select label="Golongan Darah*" name="gol_darah" :options="['A', 'B', 'AB', 'O', 'Tidak Tahu']" />
-                <x-input label="NPWP" name="npwp" />
+                <x-select label="Status Hubungan Keluarga*" name="family_relation" :options="['Ayah', 'Ibu', 'Kakak', 'Adik', 'Suami', 'Istri', 'Anak']" />
+                <x-input label="Nama Ibu Kandung*" name="biological_mother_name" />
+                <x-select label="Golongan Darah*" name="blood_type" :options="['A', 'B', 'AB', 'O', 'Tidak Tahu']" />
+                <x-input label="NPWP" name="npwp_id" />
                 <x-input label="Email*" name="email" type="email" />
 
                 {{-- II. Data KTP --}}
@@ -90,73 +96,132 @@
                     <li>Ambil yang bagian Alamat saja sesuai KTP jangan tambahkan RT/RW</li>
                     <li>Isikan sesuai dengan gambar yang di dalam kotak merah</li>
                 </ul>
-                <x-input label="Alamat Sesuai KTP*" name="alamat_ktp" />
+                <x-input label="Alamat Sesuai KTP*" name="address" />
                 <div class="flex gap-2">
-                    <x-select label="Tanggal Lahir - Hari*" name="day" :options="range(1, 31)" />
-                    <x-select label="Tanggal Lahir - Bulan*" name="month" :options="[
-                        1 => 'Januari',
-                        2 => 'Februari',
-                        3 => 'Maret',
-                        4 => 'April',
-                        5 => 'Mei',
-                        6 => 'Juni',
-                        7 => 'Juli',
-                        8 => 'Agustus',
-                        9 => 'September',
-                        10 => 'Oktober',
-                        11 => 'November',
-                        12 => 'Desember',
-                    ]" />
-                    <x-select label="Tanggal Lahir - Tahun*" name="year" :options="range(date('Y'), 1900)" />
+                    <div class="space-y-1">
+                        <label class="block text-sm font-medium text-gray-700">Tahun Lahir*</label>
+                        <select name="year" id="year"
+                            class=" input-field-select w-full border border-gray-300 rounded-md px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            <option value="">-- Pilih --</option>
+                            @foreach (range(date('Y'), 1945) as $year)
+                                <option value="{{ $year }}" {{ old('year') == $year ? 'selected' : '' }}>
+                                    {{ $year }}</option>
+                            @endforeach
+                        </select>
+                        @error('year')
+                            <p class="text-red-500 text-xs">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="space-y-1">
+                        <label class="block text-sm font-medium text-gray-700">Bulan Lahir*</label>
+                        <select name="month" id="month"
+                            class=" input-field-select w-full border border-gray-300 rounded-md px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            <option value="">-- Pilih --</option>
+                            @foreach (range(1, 12) as $month)
+                                <option value="{{ $month }}" {{ old('month') == $month ? 'selected' : '' }}>
+                                    {{ \Carbon\Carbon::create()->month($month)->locale('id')->translatedFormat('F') }}
+                                </option>
+                            @endforeach
+                        </select>
+                        @error('month')
+                            <p class="text-red-500 text-xs">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="space-y-1">
+                        <label class="block text-sm font-medium text-gray-700">Hari Lahir*</label>
+                        <select name="day" id="day"
+                            class=" input-field-select w-full border border-gray-300 rounded-md px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            <option value="">-- Pilih ---</option>
+                            @if (old('month') && old('year'))
+                                @php
+                                    $daysInMonth = cal_days_in_month(CAL_GREGORIAN, old('month'), old('year'));
+                                @endphp
+                                @for ($i = 1; $i <= $daysInMonth; $i++)
+                                    <option value="{{ $i }}" {{ old('day') == $i ? 'selected' : '' }}>
+                                        {{ $i }}</option>
+                                @endfor
+                            @endif
+                        </select>
+                        @error('day')
+                            <p class="text-red-500 text-xs">{{ $message }}</p>
+                        @enderror
+                    </div>
                 </div>
                 <x-input label="Tempat Lahir*" name="birthplace" />
                 <x-select label="Jenis Kelamin*" name="gender" :options="['Laki-laki', 'Perempuan']"></x-select>
-                <x-select label="Agama*" name="religion" :options="['Islam','Kristen','Katholik','Budha','Hindu','Konghucu']"></x-select>
+                <x-select label="Agama*" name="religion" :options="['Islam', 'Kristen', 'Katholik', 'Budha', 'Hindu', 'Konghucu']"></x-select>
+                <?php if (old('village')) {
+                    // Menampilkan data kelurahan berdasarkan district
+                    $village = App\Models\Village::where('district_code', old('district'))->get();
+                
+                    //Menampilkan data district berdasarkan city
+                    $districts = App\Models\District::where('city_code', old('city'))->get();
+                
+                    //Menampilkan data city berdasarkan province
+                    $citiess = DB::table('indonesia_cities')->where('province_code', old('province'))->get();
+                    $provinces = DB::table('indonesia_provinces')->get();
+                }
+                ?>
+
                 <div class="space-y-1">
-                    <label class="block text-sm font-medium text-gray-700">Provinsi*</label>
-                    <select id="provinsi" name="provinsi"
+                    <label class="block text-sm font-medium text-gray-700">Provinsi* </label>
+                    <select id="province" name="province"
                         class="input-field-select w-full border border-gray-300 rounded-md px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-purple-500">
                         <option value="">Pilih Provinsi</option>
-                        {{-- @foreach ($provinsi as $item)
-                            <option value="{{ $item->kode }}">{{ $item->nama }}</option>
-                        @endforeach --}}
+                        @if (old('province'))
+                            @foreach ($provinces as $item)
+                                <option value="{{ $item->code }}"
+                                    {{ old('province') == $item->code ? 'selected' : '' }}>{{ $item->name }}
+                                </option>
+                            @endforeach
+                        @else
+                        @endif
                     </select>
                 </div>
                 <div class="space-y-1">
                     <label class="block text-sm font-medium text-gray-700">Kabupaten/Kota*</label>
-                    <select id="kabupaten" name="kota"
+                    <select id="city" name="city"
                         class="input-field-select w-full border border-gray-300 rounded-md px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-purple-500">
                         <option value="">Pilih Kab / Kota</option>
-                        {{-- @foreach ($kabupaten as $item)
-                            <option value="{{ $item->kode }}">{{ $item->nama }}</option>
-                        @endforeach --}}
+                        @if (old('province'))
+                            @foreach ($citiess as $item)
+                                <option value="{{ $item->code }}"
+                                    {{ old('city') == $item->code ? 'selected' : '' }}>
+                                    {{ $item->name }}</option>
+                            @endforeach
+                        @else
+                        @endif
                     </select>
                 </div>
                 <div class="space-y-1">
                     <label class="block text-sm font-medium text-gray-700">Kecamatan*</label>
-                    <select id="kecamatan" name="kecamatan"
+                    <select id="district" name="district"
                         class="input-field-select w-full border border-gray-300 rounded-md px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-purple-500">
                         <option value="">Pilih Kecamatan</option>
-                        {{-- @foreach ($kecamatan as $item)
-                            <option value="{{ $item->kode }}">{{ $item->nama }}</option>
-                        @endforeach --}}
+                        @if (old('city'))
+                            @foreach ($districts as $item)
+                                <option value="{{ $item->code }}"
+                                    {{ old('district') == $item->code ? 'selected' : '' }}>
+                                    {{ $item->name }}</option>
+                            @endforeach
+
+                        @endif
                     </select>
                 </div>
                 <div class="space-y-1">
-                    <label class="block text-sm font-medium text-gray-700">Kelurahan/Desa*</label>
-                    <select id="kelurahan" name="kelurahan"
+                    <label class="block text-sm font-medium text-gray-700">Kelurahan/Desa* </label>
+                    <select id="village" name="village"
                         class="input-field-select w-full border border-gray-300 rounded-md px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-purple-500">
                         <option value="">Pilih Kelurahan / Desa</option>
-                        {{-- @foreach ($kelurahan as $item)
-                            <option value="{{ $item->kode }}">{{ $item->nama }}</option>
-                        @endforeach --}}
+                        @if (old('district'))
+                            @foreach ($village as $item)
+                                <option value="{{ $item->code }}"
+                                    {{ old('village') == $item->code ? 'selected' : '' }}>
+                                    {{ $item->name }}</option>
+                            @endforeach
+                        @endif
                     </select>
                 </div>
-                {{-- <x-select label="Provinsi*" name="provinsi" id="provinsi" /> --}}
-                {{-- <x-input label="Kabupaten / Kota*" name="kota" /> --}}
-                {{-- <x-input label="Kecamatan*" name="kecamatan" /> --}}
-                {{-- <x-input label="Kelurahan / Desa*" name="kelurahan" /> --}}
-
                 <div class="flex gap-2">
                     <x-input label="RT*" name="rt" type="number" />
                     <x-input label="RW*" name="rw" type="number" />
@@ -165,55 +230,95 @@
                 {{-- III. Survey Tempat Tinggal --}}
                 <h2 class="font-semibold text-gray-700">III. Survey Tempat Tinggal</h2>
 
-                <x-select label="Dimanakah anda tinggal?*" name="tinggal_di" :options="['Kost', 'Kontrakan', 'Rumah/Perumahan', 'Rusun', 'Asrama']" />
-                <x-input label="Alamat Domisili*" name="alamat_domisili" />
+                <x-select label="Dimanakah anda tinggal?*" name="residence" :options="['Kost', 'Kontrakan', 'Rumah/Perumahan', 'Rusun', 'Asrama']" />
+                <div class="space-y-1">
+                    <div class="flex justify-between items-start">
+                        <label for="domicile" class="block text-sm font-medium text-gray-700">
+                            Alamat Domisili*
+                        </label>
+                        <label class="inline-flex items-center space-x-1">
+                            <input type="checkbox"
+                                class="form-checkbox h-4 w-4 text-blue-600 rounded focus:ring focus:ring-blue-300"
+                                id="address_match">
+                            <span class="relative -translate-y-0.5 text-gray-700 text-xs">Alamat sesuai KTP</span>
+                        </label>
+                    </div>
+
+                    <input name="domicile" id="domicile" value="{{ old('domicile') }}"
+                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500">
+
+                    @error('domicile')
+                        <p class="text-red-500 text-xs">{{ $message }}</p>
+                    @enderror
+                </div>
 
                 {{-- IV. Status Pernikahan --}}
                 <h2 class="font-semibold text-gray-700">IV. Status Pernikahan</h2>
-                <x-select label="Status Pernikahan*" name="status_pernikahan" :options="['Belum Kawin', 'Kawin', 'Janda', 'Duda']" />
-                <x-input label="Nama Istri / Suami" name="nama_pasangan" />
+                <x-select label="Status Pernikahan*" name="marital_status" :options="['Belum Kawin', 'Kawin', 'Janda', 'Duda']" />
+                <x-input label="Nama Istri / Suami" name="spouse_name" />
 
                 {{-- V. Data Anak --}}
                 <h2 class="font-semibold text-gray-700">V. Data Anak</h2>
                 <div class="space-y-1">
                     <label class="block text-sm font-medium text-gray-700">Jumlah Anak</label>
-                    <select name="jumlah_anak" id="jumlah_anak"
+                    <select name="sum_children" id="sum_children"
                         class=" input-field-select w-full border border-gray-300 rounded-md px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-purple-500">
                         <option value="">-- Pilih --</option>
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
+
+                        @for ($index = 0; $index <= 10; $index++)
+                            <option value="{{ $index }}"
+                                {{ old('sum_children') == $index ? 'selected' : '' }}>
+                                {{ $index }}</option>
+                        @endfor
+
+
                     </select>
-                    @error('jumlah_anak')
+                    @error('sum_children')
                         <p class="text-red-500 text-xs">{{ $message }}</p>
                     @enderror
                 </div>
                 {{-- <x-select id="jmlh_anak" label="Jumlah Anak" name="jumlah_anak" :options="[0, 1, 2, 3, 4, 5]" /> --}}
-                <div id="data-anak-wrapper" class="mt-3" style="display: block;">
-                    <div class="row g-2">
-                        <div class="col-md-6">
-                            <x-input label="Nama Anak" name="nama_anak[]" />
-                        </div>
-                        <div class="col-md-6">
-                            <x-input label="Tanggal Lahir Anak" name="tanggal_lahir_anak[]" type="date" />
-                        </div>
-                    </div>
+                <div id="child-data-wrapper" class="mt-3" style="display: block;">
+                    @if (old('sum_children') > 0)
+
+                        @for ($i = 0; $i < old('sum_children'); $i++)
+                            <div class="row g-2">
+                                <div class="col-md-6">
+                                    <label class="block text-sm font-medium text-gray-700">Nama Anak
+                                        {{ $i + 1 }}</label>
+                                    <input name="child_name[]" value="{{ old('child_name')[$i] ?? '' }}"
+                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                    {{-- <x-input label="Nama Anak " name="nama_anak[]"
+                                        value="{{ old('nama_anak')[$i] ?? '' }}" /> --}}
+                                    @error('child_name.' . $i)
+                                        <p class="text-red-500 text-xs">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="block text-sm font-medium text-gray-700">Tanggal Lahir Anak
+                                        {{ $i + 1 }}</label>
+                                    <input type="date" name="child_birthdate[]"
+                                        value="{{ old('child_birthdate')[$i] ?? '' }}"
+                                        class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                    {{-- <x-input label="Tanggal Lahir Anak {{ $i }}"
+                                        name="tanggal_lahir_anak[]" type="date" /> --}}
+                                    @error('child_birthdate.' . $i)
+                                        <p class="text-red-500 text-xs">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                            </div>
+                        @endfor
+
+                    @endif
                 </div>
 
                 {{-- Tombol --}}
                 <div class="flex justify-between">
                     <a href="#"
-                        class="px-6 py-2 border rounded-lg text-purple-600 border-purple-600 hover:bg-purple-50">Cancel</a>
-                    <button type="submit"
-                        class="px-6 py-2 rounded-lg bg-purple-600 text-white hover:bg-purple-700">Kirim</button>
+                        class="px-6 py-2 border rounded-lg text-purple-600 border-purple-600 hover:bg-purple-50"
+                        style="text-decoration: none">Cancel</a>
+                    <button type="submit" class="px-6 py-2 bg-purple-600 text-white hover:bg-purple-700"
+                        style="">Kirim</button>
                 </div>
             </form>
         </div>
@@ -223,7 +328,8 @@
     <div class="footer text-center mt-3 pb-2">
         <div class="container">
             <a class="navbar-brand" id="container-footer" href="#">
-                <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="HWI" width="127" height="72">
+                <img src="{{ asset('assets/LOGO HWI BARU WEB.png') }}" alt="HWI" width="127"
+                    height="72">
             </a>
             <p class="pt-2">© 2024 All rights reserved. PT Hwaseung Indonesia - Jepara</p>
         </div>
@@ -249,60 +355,29 @@
             width: 'resolve',
             height: 'resolve',
         });
-
-        // $('#provinsi').on('change', function() {
-        //     let kode = $(this).val();
-        //     getWilayah(kode, '#kabupaten');
-        //     $('#kecamatan').html('<option value="">Pilih Kecamatan</option>').trigger('change');
-        //     $('#kelurahan').html('<option value="">Pilih Kelurahan / Desa</option>').trigger('change');
-        // });
-
-        // $('#kabupaten').on('change', function() {
-        //     let kode = $(this).val();
-        //     getWilayah(kode, '#kecamatan');
-        //     $('#kelurahan').html('<option value="">Pilih Kelurahan / Desa</option>').trigger('change');
-        // });
-
-        // $('#kecamatan').on('change', function() {
-        //     let kode = $(this).val();
-        //     getWilayah(kode, '#kelurahan');
-        // });
-
-        // function getWilayah(kode, target) {
-        //     $(target).html('<option value="">Memuat...</option>');
-        //     $.get('/get-wilayah', {
-        //         kode: kode
-        //     }, function(data) {
-        //         let html = '<option value="">Pilih</option>';
-        //         $.each(data, function(i, d) {
-        //             html += `<option value="${d.kode}">${d.nama}</option>`;
-        //         });
-        //         $(target).html(html).trigger('change');
-        //     });
-        // }
     });
 </script>
 <script>
     $(document).ready(function() {
-        $('#jumlah_anak').on('change', function() {
+        $('#sum_children').on('change', function() {
             let jumlah = $(this).val();
             if (jumlah > 0) {
-                $('#data-anak-wrapper').show();
-                $('#data-anak-wrapper').html('');
+                $('#child-data-wrapper').show();
+                $('#child-data-wrapper').html('');
                 for (let i = 1; i <= jumlah; i++) {
-                    $('#data-anak-wrapper').append(`
+                    $('#child-data-wrapper').append(`
                         <div class="row g-2">
                             <div class="col-md-6">
-                                <x-input label="Nama Anak ${i}" name="nama_anak[]" />
+                                <x-input label="Nama Anak ${i}" name="child_name[]" />
                             </div>
                             <div class="col-md-6">
-                                <x-input label="Tanggal Lahir Anak ${i}" name="tanggal_lahir_anak[]" type="date" />
+                                <x-input label="Tanggal Lahir Anak ${i}" name="child_birthdate[]" type="date" />
                             </div>
                         </div>
                     `);
                 }
             } else {
-                $('#data-anak-wrapper').hide();
+                $('#child-data-wrapper').hide();
             }
         });
     });
@@ -310,7 +385,7 @@
 <script>
     $(document).ready(function() {
 
-        $("#provinsi").select2({
+        $("#province").select2({
             width: 'resolve',
             height: 'resolve',
             ajax: {
@@ -332,10 +407,10 @@
             }
         });
 
-        $("#provinsi").change(function() {
-            let id = $('#provinsi').val();
+        $("#province").change(function() {
+            let id = $('#province').val();
 
-            $("#kabupaten").select2({
+            $("#city").select2({
                 width: 'resolve',
                 height: 'resolve',
                 ajax: {
@@ -356,10 +431,10 @@
             });
         });
 
-        $("#kabupaten").change(function() {
-            let id = $('#kabupaten').val();
+        $("#city").change(function() {
+            let id = $('#city').val();
 
-            $("#kecamatan").select2({
+            $("#district").select2({
                 width: 'resolve',
                 height: 'resolve',
                 ajax: {
@@ -380,10 +455,10 @@
             });
         });
 
-        $("#kecamatan").change(function() {
-            let id = $('#kecamatan').val();
+        $("#district").change(function() {
+            let id = $('#district').val();
 
-            $("#kelurahan").select2({
+            $("#village").select2({
                 width: 'resolve',
                 height: 'resolve',
                 ajax: {
@@ -405,5 +480,28 @@
         });
     });
 </script>
+<script>
+    $('#address_match').on('change', function() {
+        if ($(this).is(':checked')) {
+            $('#domicile').val($('input[name="address"]').val());
+        } else {
+            $('#domicile').val('');
+        }
+    });
+</script>
+<script>
+    // update the day select options based on the selected month and year
+    $('#month, #year').on('change', function() {
+        var month = $('#month').val();
+        var year = $('#year').val();
+        var daysInMonth = new Date(year, month, 0).getDate();
+
+        $('#day').html('<option value="">-- Pilih --</option>');
+        for (var i = 1; i <= daysInMonth; i++) {
+            $('#day').append('<option value="' + i + '" >' + i + '</option>');
+        }
+    });
+</script>
+
 
 </html>

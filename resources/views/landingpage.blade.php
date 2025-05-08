@@ -198,6 +198,17 @@
                         <h3 class="service-title">Payslip</h3>
                     </div>
                 </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="service-item">
+                        <div class="service-icon-wrapper">
+                            <a href="/form-karyawan" style="text-decoration: none">
+                                <img src="{{ asset('assets/payslip.png') }}" class="service-icon"
+                                    alt="Online Resignation Service" width="32" height="32">
+                            </a>
+                        </div>
+                        <h3 class="service-title">Payslip</h3>
+                    </div>
+                </div>
             </div>
         </div>
         {{-- End Layanan Card --}}

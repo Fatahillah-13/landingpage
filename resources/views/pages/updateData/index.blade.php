@@ -99,8 +99,11 @@
                                     @if (!empty($anak))
                                         <ul class="list-disc list-inside">
                                             @foreach ($anak as $a)
-                                                <li>{{ $a['nama'] }}
-                                                    ({{ \Carbon\Carbon::parse($a['tanggal_lahir'])->translatedFormat('d F Y') }})
+                                                {{-- @php
+                                                    dd($a);
+                                                @endphp --}}
+                                                <li>{{ $a['child_name'] }}
+                                                    ({{ \Carbon\Carbon::parse($a['child_birthdate'])->translatedFormat('d F Y') }})
                                                 </li>
                                             @endforeach
                                         </ul>
