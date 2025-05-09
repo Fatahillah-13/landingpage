@@ -53,40 +53,43 @@ class EmployeeController extends Controller
 
     public function store(Request $request)
     {
-
-        // dd($request->sum_children);
+        // dd($request->all());
         $request->merge([
             'rt' => (string) $request->rt,
             'rw' => (string) $request->rw,
         ]);
 
-        $months = [
-            'Januari' => '01',
-            'Februari' => '02',
-            'Maret' => '03',
-            'April' => '04',
-            'Mei' => '05',
-            'Juni' => '06',
-            'Juli' => '07',
-            'Agustus' => '08',
-            'September' => '09',
-            'Oktober' => '10',
-            'November' => '11',
-            'Desember' => '12'
-        ];
+        // $months = [
+        //     'Januari' => '01',
+        //     'Februari' => '02',
+        //     'Maret' => '03',
+        //     'April' => '04',
+        //     'Mei' => '05',
+        //     'Juni' => '06',
+        //     'Juli' => '07',
+        //     'Agustus' => '08',
+        //     'September' => '09',
+        //     'Oktober' => '10',
+        //     'November' => '11',
+        //     'Desember' => '12'
+        // ];
 
-        $month = strtolower($request->month);
-        $monthNumber = $months[$month] ?? '01'; // Default to '01' if month is invalid
+        // $month = strtolower($request->month);
+        // $monthNumber = $months[$month] ?? '01'; // Default to '01' if month is invalid
 
         if (!is_numeric($request->year)) {
             $request->merge(['year' => (int) $request->year]);
+        }
+
+        if (!is_numeric($request->month)) {
+            $request->merge(['month' => (int) $request->month]);
         }
 
         if (!is_numeric($request->day)) {
             $request->merge(['day' => (int) $request->day]);
         }
 
-        $birthdate = sprintf('%04d-%02d-%02d', $request->year, $monthNumber, $request->day);
+        $birthdate = sprintf('%04d-%02d-%02d', $request->year, $request->month, $request->day);
         $request->merge(['birthdate' => $birthdate]);
 
 
